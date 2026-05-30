@@ -37,7 +37,7 @@ dsp dsp_0(
     .p_o    (p_o[0])
 );
 
-dsp_1(
+dsp dsp_1(
     .clk_i (clk),
     
     .k_i   (kb_i),
