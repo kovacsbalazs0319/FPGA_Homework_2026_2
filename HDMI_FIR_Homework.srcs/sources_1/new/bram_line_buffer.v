@@ -130,6 +130,7 @@ reg                   h_sync_d1;
 reg                   h_sync_d2;
 reg                   h_sync_d3;
 reg                   h_sync_d4;
+reg                   h_sync_prev;
 
 reg                   v_sync_d1;
 reg                   v_sync_d2;
@@ -154,10 +155,12 @@ reg  [DATA_WIDTH-1:0] line_2_pixel_delayed1;
 reg  [DATA_WIDTH-1:0] line_2_pixel_delayed2;
 
 reg  [DATA_WIDTH-1:0] line_3_pixel_delayed1;
+wire                  start_of_line;
 
 // Force address 0 on the first pixel of a new line so the write/read pair
 // starts from column 0 immediately, independent of the previously stored count.
-assign addr_current = h_sync ? {ADDR_WIDTH{1'b0}} : column_addr;
+assign start_of_line = h_sync & ~h_sync_prev;
+assign addr_current = start_of_line ? {ADDR_WIDTH{1'b0}} : column_addr;
 
 always @(posedge clk) begin
     if (rst) begin
@@ -180,6 +183,7 @@ always @(posedge clk) begin
         h_sync_d2       <= 1'b0;
         h_sync_d3       <= 1'b0;
         h_sync_d4       <= 1'b0;
+        h_sync_prev     <= 1'b0;
 
         v_sync_d1       <= 1'b0;
         v_sync_d2       <= 1'b0;
@@ -201,7 +205,9 @@ always @(posedge clk) begin
         line_3_pixel_delayed1 <= {DATA_WIDTH{1'b0}};
 
     end else begin
-        if (h_sync) begin
+        h_sync_prev <= h_sync;
+
+        if (start_of_line) begin
             column_addr <= {{(ADDR_WIDTH-1){1'b0}}, 1'b1};
         end else if (stream_advance) begin
             if (column_addr == line_width_minus_one) begin

@@ -1,0 +1,134 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sat Jun  6 16:32:17 2026
+| Host         : DESKTOP-H73H9I1 running 64-bit major release  (build 9200)
+| Command      : report_drc -file hdmi_top_drc_routed.rpt -pb hdmi_top_drc_routed.pb -rpx hdmi_top_drc_routed.rpx
+| Design       : hdmi_top
+| Device       : xc7k70tfbg676-1
+| Speed File   : -1
+| Design State : Fully Routed
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Report DRC
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+           Ruledeck: default
+             Max checks: <unlimited>
+             Checks found: 19
++----------+----------+--------------------------------------------------+--------+
+| Rule     | Severity | Description                                      | Checks |
++----------+----------+--------------------------------------------------+--------+
+| AVAL-70  | Warning  | OSERDES_DataRateTqTriWidth                       | 6      |
+| DPIP-1   | Warning  | Input pipelining                                 | 6      |
+| DPOP-1   | Warning  | PREG Output pipelining                           | 1      |
+| REQP-107 | Warning  | enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O | 6      |
++----------+----------+--------------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+AVAL-70#1 Warning
+OSERDES_DataRateTqTriWidth  
+Unexpected programming for hdmi_tx_0/tmds_transmitter/oserdes0/master_oserdes with TRISTATE_WIDTH. DATA_RATE_TQ set DDR expects TRISTATE_WIDTH to be set 4
+Related violations: <none>
+
+AVAL-70#2 Warning
+OSERDES_DataRateTqTriWidth  
+Unexpected programming for hdmi_tx_0/tmds_transmitter/oserdes0/slave_oserdes with TRISTATE_WIDTH. DATA_RATE_TQ set DDR expects TRISTATE_WIDTH to be set 4
+Related violations: <none>
+
+AVAL-70#3 Warning
+OSERDES_DataRateTqTriWidth  
+Unexpected programming for hdmi_tx_0/tmds_transmitter/oserdes1/master_oserdes with TRISTATE_WIDTH. DATA_RATE_TQ set DDR expects TRISTATE_WIDTH to be set 4
+Related violations: <none>
+
+AVAL-70#4 Warning
+OSERDES_DataRateTqTriWidth  
+Unexpected programming for hdmi_tx_0/tmds_transmitter/oserdes1/slave_oserdes with TRISTATE_WIDTH. DATA_RATE_TQ set DDR expects TRISTATE_WIDTH to be set 4
+Related violations: <none>
+
+AVAL-70#5 Warning
+OSERDES_DataRateTqTriWidth  
+Unexpected programming for hdmi_tx_0/tmds_transmitter/oserdes2/master_oserdes with TRISTATE_WIDTH. DATA_RATE_TQ set DDR expects TRISTATE_WIDTH to be set 4
+Related violations: <none>
+
+AVAL-70#6 Warning
+OSERDES_DataRateTqTriWidth  
+Unexpected programming for hdmi_tx_0/tmds_transmitter/oserdes2/slave_oserdes with TRISTATE_WIDTH. DATA_RATE_TQ set DDR expects TRISTATE_WIDTH to be set 4
+Related violations: <none>
+
+DPIP-1#1 Warning
+Input pipelining  
+DSP fir_0/fir_out_o input fir_0/fir_out_o/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#2 Warning
+Input pipelining  
+DSP fir_0/fir_out_o input fir_0/fir_out_o/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#3 Warning
+Input pipelining  
+DSP fir_0/fir_out_o input fir_0/fir_out_o/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#4 Warning
+Input pipelining  
+DSP fir_0/fir_out_o__0 input fir_0/fir_out_o__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#5 Warning
+Input pipelining  
+DSP fir_0/fir_out_o__0 input fir_0/fir_out_o__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPIP-1#6 Warning
+Input pipelining  
+DSP fir_0/fir_out_o__0 input fir_0/fir_out_o__0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+Related violations: <none>
+
+DPOP-1#1 Warning
+PREG Output pipelining  
+DSP fir_0/fir_out_o__0 output fir_0/fir_out_o__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+Related violations: <none>
+
+REQP-107#1 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+hdmi_rx_0/tmds_receiver/decoder_b/iserdes/master_iserdes: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#2 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+hdmi_rx_0/tmds_receiver/decoder_b/iserdes/slave_iserdes: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#3 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+hdmi_rx_0/tmds_receiver/decoder_g/iserdes/master_iserdes: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#4 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+hdmi_rx_0/tmds_receiver/decoder_g/iserdes/slave_iserdes: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#5 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+hdmi_rx_0/tmds_receiver/decoder_r/iserdes/master_iserdes: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+REQP-107#6 Warning
+enum_IOBDELAY_BOTH_enum_IOBDELAY_IBUF_connects_O  
+hdmi_rx_0/tmds_receiver/decoder_r/iserdes/slave_iserdes: The O output pin is required for IOBDELAY set BOTH or IBUF.
+Related violations: <none>
+
+

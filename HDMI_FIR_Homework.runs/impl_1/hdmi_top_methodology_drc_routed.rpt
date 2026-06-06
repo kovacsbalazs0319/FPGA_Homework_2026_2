@@ -1,0 +1,168 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sat Jun  6 16:32:19 2026
+| Host         : DESKTOP-H73H9I1 running 64-bit major release  (build 9200)
+| Command      : report_methodology -file hdmi_top_methodology_drc_routed.rpt -pb hdmi_top_methodology_drc_routed.pb -rpx hdmi_top_methodology_drc_routed.rpx
+| Design       : hdmi_top
+| Device       : xc7k70tfbg676-1
+| Speed File   : -1
+| Design State : Fully Routed
+--------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+Report Methodology
+
+Table of Contents
+-----------------
+1. REPORT SUMMARY
+2. REPORT DETAILS
+
+1. REPORT SUMMARY
+-----------------
+            Netlist: netlist
+          Floorplan: design_1
+      Design limits: <entire design considered>
+             Max checks: <unlimited>
+             Checks found: 23
++-----------+----------+--------------------------------------------+--------+
+| Rule      | Severity | Description                                | Checks |
++-----------+----------+--------------------------------------------+--------+
+| LUTAR-1   | Warning  | LUT drives async reset alert               | 1      |
+| SYNTH-6   | Warning  | Timing of a RAM block might be sub-optimal | 6      |
+| TIMING-18 | Warning  | Missing input or output delay              | 10     |
+| REQP-1959 | Advisory | connects_SERDES_RST_driver_not_FF          | 6      |
++-----------+----------+--------------------------------------------+--------+
+
+2. REPORT DETAILS
+-----------------
+LUTAR-1#1 Warning
+LUT drives async reset alert  
+LUT cell hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/this_ready_i_2, with 2 or more inputs, drives asynchronous preset/clear pin(s) hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/wr_addr_reg[0]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/wr_addr_reg[1]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/wr_addr_reg[2]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/wr_addr_reg[3]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/iserdes/master_iserdes/RST,
+hdmi_rx_0/tmds_receiver/decoder_r/iserdes/slave_iserdes/RST,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/FSM_onehot_current_state_reg[0]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/FSM_onehot_current_state_reg[1]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/FSM_onehot_current_state_reg[2]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/FSM_onehot_current_state_reg[3]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/FSM_onehot_current_state_reg[4]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/FSM_onehot_current_state_reg[5]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/FSM_onehot_current_state_reg[6]/CLR,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/FSM_onehot_current_state_reg[7]/PRE,
+hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/phase_aligned_reg/CLR
+ (the first 15 of 69 listed). The LUT may glitch and trigger an unexpected reset, even if it is a properly timed path.
+Related violations: <none>
+
+SYNTH-6#1 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance hdmi_rx_0/tmds_receiver/decoder_b/phase_aligner/tmds_checker/is_valid_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#2 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/tmds_checker/is_valid_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#3 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance line_buffer_0/bram_line_0/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#4 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance line_buffer_0/bram_line_1/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#5 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance line_buffer_0/bram_line_2/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+SYNTH-6#6 Warning
+Timing of a RAM block might be sub-optimal  
+The timing for the instance line_buffer_0/bram_line_3/mem_reg, implemented as a RAM block, might be sub-optimal as no output register was merged into the block.
+Related violations: <none>
+
+TIMING-18#1 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_clk_n relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#2 Warning
+Missing input or output delay  
+An output delay is missing on hdmi_tx_clk_p relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#3 Warning
+Missing input or output delay  
+An output delay is missing on led_r[0] relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#4 Warning
+Missing input or output delay  
+An output delay is missing on led_r[1] relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#5 Warning
+Missing input or output delay  
+An output delay is missing on led_r[2] relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#6 Warning
+Missing input or output delay  
+An output delay is missing on led_r[3] relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#7 Warning
+Missing input or output delay  
+An output delay is missing on led_r[4] relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#8 Warning
+Missing input or output delay  
+An output delay is missing on led_r[5] relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#9 Warning
+Missing input or output delay  
+An output delay is missing on led_r[6] relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+TIMING-18#10 Warning
+Missing input or output delay  
+An output delay is missing on led_r[7] relative to the rising and/or falling clock edge(s) of hdmi_rx_clk_p.
+Related violations: <none>
+
+REQP-1959#1 Advisory
+connects_SERDES_RST_driver_not_FF  
+hdmi_rx_0/tmds_receiver/decoder_b/iserdes/master_iserdes: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#2 Advisory
+connects_SERDES_RST_driver_not_FF  
+hdmi_rx_0/tmds_receiver/decoder_b/iserdes/slave_iserdes: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#3 Advisory
+connects_SERDES_RST_driver_not_FF  
+hdmi_rx_0/tmds_receiver/decoder_g/iserdes/master_iserdes: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#4 Advisory
+connects_SERDES_RST_driver_not_FF  
+hdmi_rx_0/tmds_receiver/decoder_g/iserdes/slave_iserdes: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#5 Advisory
+connects_SERDES_RST_driver_not_FF  
+hdmi_rx_0/tmds_receiver/decoder_r/iserdes/master_iserdes: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+REQP-1959#6 Advisory
+connects_SERDES_RST_driver_not_FF  
+hdmi_rx_0/tmds_receiver/decoder_r/iserdes/slave_iserdes: The RST pin should only be driven by a Flip-flop.
+Related violations: <none>
+
+

@@ -49,3 +49,4 @@ PROGRESS: wrote 245760 pixels
 PROGRESS: wrote 262144 pixels
 DONE: wrote 262144 pixels to fir_img_out.raw
 $stop called at time : 2887850 ns : File "C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sim_1/new/tb_fir_picture.v" Line 194
+INFO: xsimkernel Simulation Memory Usage: 29048 KB (Peak: 29048 KB), Simulation CPU Usage: 12171 ms

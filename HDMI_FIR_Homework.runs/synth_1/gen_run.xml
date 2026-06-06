@@ -1,46 +1,21 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbg676-1" LaunchTime="1778597590">
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbg676-1" LaunchTime="1780756129" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hdmi_top.dcp">
+  <File Type="PA-TCL" Name="hdmi_top.tcl"/>
   <File Type="REPORTS-TCL" Name="hdmi_top_reports.tcl"/>
+  <File Type="RDS-RDS" Name="hdmi_top.vds"/>
+  <File Type="RDS-PROPCONSTRS" Name="hdmi_top_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="hdmi_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="hdmi_top_utilization_synth.pb"/>
-  <File Type="PA-TCL" Name="hdmi_top.tcl"/>
-  <File Type="RDS-RDS" Name="hdmi_top.vds"/>
   <File Type="RDS-DCP" Name="hdmi_top.dcp"/>
+  <File Type="VDS-TIMINGSUMMARY" Name="hdmi_top_timing_summary_synth.rpt"/>
+  <File Type="VDS-TIMING-PB" Name="hdmi_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
-    <File Path="$PSRCDIR/sources_1/imports/hdl/dsp.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/fpga_gyak4_megoldas/_src/hdl/dsp.v"/>
-        <Attr Name="ImportTime" Val="1778580203"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/imports/hdl/rgb2y.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
-        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/fpga_gyak4_megoldas/_src/hdl/rgb2y.v"/>
-        <Attr Name="ImportTime" Val="1778580203"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
     <File Path="$PSRCDIR/sources_1/imports/hdl/tf_rgb2y.v">
       <FileInfo>
         <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/fpga_gyak4_megoldas/_src/hdl/tf_rgb2y.v"/>
         <Attr Name="ImportTime" Val="1778580203"/>
-        <Attr Name="UsedIn" Val="synthesis"/>
-        <Attr Name="UsedIn" Val="implementation"/>
-        <Attr Name="UsedIn" Val="simulation"/>
-      </FileInfo>
-    </File>
-    <File Path="$PSRCDIR/sources_1/new/bram_line_buffer.v">
-      <FileInfo>
-        <Attr Name="AutoDisabled" Val="1"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
         <Attr Name="UsedIn" Val="simulation"/>
@@ -62,6 +37,29 @@
         <Attr Name="UsedIn" Val="implementation"/>
       </FileInfo>
     </File>
+    <File Path="$PSRCDIR/sources_1/new/5x5_FIR_filter.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/new/bram_line_buffer.v">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/dsp.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/fpga_gyak4_megoldas/_src/hdl/dsp.v"/>
+        <Attr Name="ImportTime" Val="1778580203"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
     <File Path="$PSRCDIR/sources_1/imports/hdl/hdmi_rx.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/fpga_gyak4_megoldas/_src/hdl/hdmi_rx.v"/>
@@ -74,6 +72,15 @@
     <File Path="$PSRCDIR/sources_1/imports/hdl/hdmi_tx.v">
       <FileInfo>
         <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/fpga_gyak4_megoldas/_src/hdl/hdmi_tx.v"/>
+        <Attr Name="ImportTime" Val="1778580203"/>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedIn" Val="simulation"/>
+      </FileInfo>
+    </File>
+    <File Path="$PSRCDIR/sources_1/imports/hdl/rgb2y.v">
+      <FileInfo>
+        <Attr Name="ImportPath" Val="$PPRDIR/../../../../Downloads/fpga_gyak4_megoldas/_src/hdl/rgb2y.v"/>
         <Attr Name="ImportTime" Val="1778580203"/>
         <Attr Name="UsedIn" Val="synthesis"/>
         <Attr Name="UsedIn" Val="implementation"/>
@@ -119,6 +126,14 @@
   </FileSet>
   <FileSet Name="utils" Type="Utils" RelSrcDir="$PSRCDIR/utils_1" RelGenDir="$PGENDIR/utils_1">
     <Filter Type="Utils"/>
+    <File Path="$PSRCDIR/utils_1/imports/synth_1/hdmi_top.dcp">
+      <FileInfo>
+        <Attr Name="UsedIn" Val="synthesis"/>
+        <Attr Name="UsedIn" Val="implementation"/>
+        <Attr Name="UsedInSteps" Val="synth_1"/>
+        <Attr Name="AutoDcp" Val="1"/>
+      </FileInfo>
+    </File>
     <Config>
       <Option Name="TopAutoSet" Val="TRUE"/>
     </Config>

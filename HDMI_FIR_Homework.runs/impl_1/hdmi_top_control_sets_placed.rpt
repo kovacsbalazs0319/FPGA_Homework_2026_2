@@ -1,0 +1,104 @@
+Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
+---------------------------------------------------------------------------------------------------------------------------------------------
+| Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
+| Date         : Sat Jun  6 16:31:46 2026
+| Host         : DESKTOP-H73H9I1 running 64-bit major release  (build 9200)
+| Command      : report_control_sets -verbose -file hdmi_top_control_sets_placed.rpt
+| Design       : hdmi_top
+| Device       : xc7k70t
+---------------------------------------------------------------------------------------------------------------------------------------------
+
+Control Set Information
+
+Table of Contents
+-----------------
+1. Summary
+2. Histogram
+3. Flip-Flop Distribution
+4. Detailed Control Set Information
+
+1. Summary
+----------
+
++----------------------------------------------------------+-------+
+|                          Status                          | Count |
++----------------------------------------------------------+-------+
+| Total control sets                                       |    26 |
+|    Minimum number of control sets                        |    26 |
+|    Addition due to synthesis replication                 |     0 |
+|    Addition due to physical synthesis replication        |     0 |
+| Unused register locations in slices containing registers |    52 |
++----------------------------------------------------------+-------+
+* Control sets can be merged at opt_design using control_set_merge or merge_equivalent_drivers
+** Run report_qor_suggestions for automated merging and remapping suggestions
+
+
+2. Histogram
+------------
+
++--------------------+-------+
+|       Fanout       | Count |
++--------------------+-------+
+| Total control sets |    26 |
+| >= 0 to < 4        |     0 |
+| >= 4 to < 6        |     4 |
+| >= 6 to < 8        |     1 |
+| >= 8 to < 10       |     8 |
+| >= 10 to < 12      |     2 |
+| >= 12 to < 14      |     1 |
+| >= 14 to < 16      |     1 |
+| >= 16              |     9 |
++--------------------+-------+
+* Control sets can be remapped at either synth_design or opt_design
+
+
+3. Flip-Flop Distribution
+-------------------------
+
++--------------+-----------------------+------------------------+-----------------+--------------+
+| Clock Enable | Synchronous Set/Reset | Asynchronous Set/Reset | Total Registers | Total Slices |
++--------------+-----------------------+------------------------+-----------------+--------------+
+| No           | No                    | No                     |             446 |          137 |
+| No           | No                    | Yes                    |              93 |           44 |
+| No           | Yes                   | No                     |             260 |           86 |
+| Yes          | No                    | No                     |               0 |            0 |
+| Yes          | No                    | Yes                    |              12 |            5 |
+| Yes          | Yes                   | No                     |              33 |            8 |
++--------------+-----------------------+------------------------+-----------------+--------------+
+
+
+4. Detailed Control Set Information
+-----------------------------------
+
++-------------------+------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+--------------+
+|    Clock Signal   |                              Enable Signal                             |                              Set/Reset Signal                              | Slice Load Count | Bel Load Count | Bels / Slice |
++-------------------+------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+--------------+
+|  hdmi_rx_0/rx_clk | hdmi_rx_0/tmds_receiver/decoder_b/channel_deskew/rd_addr[3]_i_1_n_0    | hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/AR[0]                     |                2 |              4 |         2.00 |
+|  hdmi_rx_0/rx_clk | hdmi_rx_0/tmds_receiver/decoder_g/channel_deskew/rd_addr[3]_i_1__0_n_0 | hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/AR[0]                     |                2 |              4 |         2.00 |
+|  hdmi_rx_0/rx_clk | hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/rd_addr[3]_i_1__1_n_0 | hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/AR[0]                     |                1 |              4 |         4.00 |
+|  clk_200M         | hdmi_rx_0/edid_rom/count[4]_i_2_n_0                                    | hdmi_rx_0/edid_rom/count[4]_i_1_n_0                                        |                2 |              5 |         2.50 |
+|  clk_200M         | hdmi_rx_0/edid_rom/rdata[5]_i_1_n_0                                    | line_buffer_0/rst                                                          |                1 |              6 |         6.00 |
+|  clk_200M         |                                                                        | line_buffer_0/rst                                                          |                2 |              8 |         4.00 |
+|  clk_200M         | hdmi_rx_0/edid_rom/data[7]_i_1_n_0                                     | line_buffer_0/rst                                                          |                2 |              8 |         4.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/delay_shr_out              |                2 |              8 |         4.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_b/phase_aligner/delay_shr_out              |                1 |              8 |         8.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_g/channel_deskew/SR[0]                     |                2 |              8 |         4.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_g/phase_aligner/delay_shr_out              |                3 |              8 |         2.67 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/SR[0]                     |                2 |              8 |         4.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | rgb2y_0/dsp_1/P[8]                                                         |                4 |              8 |         2.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | line_buffer_0/column_addr[10]_i_1_n_0                                      |                2 |             10 |         5.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_b/channel_deskew/data_en_reg               |                6 |             11 |         1.83 |
+|  clk_200M         |                                                                        |                                                                            |                7 |             13 |         1.86 |
+|  clk_200M         | hdmi_rx_0/edid_rom/addr[6]_i_1_n_0                                     | line_buffer_0/rst                                                          |                3 |             14 |         4.67 |
+|  hdmi_rx_0/rx_clk | hdmi_rx_0/tmds_receiver/decoder_b/channel_deskew/wr_enable             |                                                                            |                2 |             16 |         8.00 |
+|  hdmi_rx_0/rx_clk | hdmi_rx_0/tmds_receiver/decoder_g/channel_deskew/wr_enable             |                                                                            |                2 |             16 |         8.00 |
+|  hdmi_rx_0/rx_clk | hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/wr_enable             |                                                                            |                2 |             16 |         8.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_r/phase_aligner/search_timer[0]_i_1__1_n_0 |                6 |             24 |         4.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_b/phase_aligner/clear                      |                6 |             24 |         4.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_g/phase_aligner/search_timer[0]_i_1__0_n_0 |                6 |             24 |         4.00 |
+|  hdmi_rx_0/rx_clk |                                                                        | hdmi_rx_0/tmds_receiver/decoder_r/channel_deskew/AR[0]                     |               26 |             51 |         1.96 |
+|  hdmi_rx_0/rx_clk |                                                                        | line_buffer_0/rst                                                          |               62 |            153 |         2.47 |
+|  hdmi_rx_0/rx_clk |                                                                        |                                                                            |              130 |            448 |         3.45 |
++-------------------+------------------------------------------------------------------------+----------------------------------------------------------------------------+------------------+----------------+--------------+
+
+
