@@ -32,7 +32,8 @@ dsp dsp_0(
     .pa0_i  (r_i),
     .pa1_i  (g_i),
     
-    .pc_i   ({40'b0, g_dl[2]}),
+    // G must be aligned to the same Q17 fixed-point scale as the DSP products.
+    .pc_i   ({23'b0, g_dl[2], 17'b0}),
     
     .p_o    (p_o[0])
 );

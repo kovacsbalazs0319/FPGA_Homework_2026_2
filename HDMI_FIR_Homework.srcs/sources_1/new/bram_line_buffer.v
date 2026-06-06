@@ -48,6 +48,13 @@ module bram_line_buffer_ram#(
 );
 
 reg [DATA_WIDTH-1:0] mem [0:LINE_WIDTH-1];
+integer init_idx;
+
+initial begin
+    for (init_idx = 0; init_idx < LINE_WIDTH; init_idx = init_idx + 1)
+        mem[init_idx] = {DATA_WIDTH{1'b0}};
+    dout = {DATA_WIDTH{1'b0}};
+end
 
 always @(posedge clk) begin
     if (en) begin
@@ -82,6 +89,7 @@ module bram_line_buffer#(
     input  wire [DATA_WIDTH-1:0] pixel_in,
     input  wire                  pixel_valid,
     input  wire                  h_sync,
+    input  wire                  v_sync,
 
     output wire [DATA_WIDTH-1:0] current_pixel,
     output wire [DATA_WIDTH-1:0] line_1_pixel,
@@ -90,7 +98,8 @@ module bram_line_buffer#(
     output wire [DATA_WIDTH-1:0] line_4_pixel,
 
     output wire                  pixel_valid_out,
-    output wire                  h_sync_out
+    output wire                  h_sync_out,
+    output wire                  v_sync_out
 );
 
 wire [ADDR_WIDTH-1:0] line_width_minus_one;
@@ -98,6 +107,11 @@ assign line_width_minus_one = LINE_WIDTH - 1;
 
 reg  [ADDR_WIDTH-1:0] column_addr;
 wire [ADDR_WIDTH-1:0] addr_current;
+wire                  stream_advance;
+wire [DATA_WIDTH-1:0] pixel_or_black;
+
+assign stream_advance = 1'b1;
+assign pixel_or_black = pixel_valid ? pixel_in : {DATA_WIDTH{1'b0}};
 
 reg  [ADDR_WIDTH-1:0] addr_delayed1;
 reg  [ADDR_WIDTH-1:0] addr_delayed2;
@@ -116,6 +130,11 @@ reg                   h_sync_d1;
 reg                   h_sync_d2;
 reg                   h_sync_d3;
 reg                   h_sync_d4;
+
+reg                   v_sync_d1;
+reg                   v_sync_d2;
+reg                   v_sync_d3;
+reg                   v_sync_d4;
 
 wire [DATA_WIDTH-1:0] line_1_bram_pixel;
 wire [DATA_WIDTH-1:0] line_2_bram_pixel;
@@ -162,6 +181,11 @@ always @(posedge clk) begin
         h_sync_d3       <= 1'b0;
         h_sync_d4       <= 1'b0;
 
+        v_sync_d1       <= 1'b0;
+        v_sync_d2       <= 1'b0;
+        v_sync_d3       <= 1'b0;
+        v_sync_d4       <= 1'b0;
+
         current_pixel_delayed1 <= {DATA_WIDTH{1'b0}};
         current_pixel_delayed2 <= {DATA_WIDTH{1'b0}};
         current_pixel_delayed3 <= {DATA_WIDTH{1'b0}};
@@ -178,12 +202,8 @@ always @(posedge clk) begin
 
     end else begin
         if (h_sync) begin
-            if (pixel_valid) begin
-                column_addr <= {{(ADDR_WIDTH-1){1'b0}}, 1'b1};
-            end else begin
-                column_addr <= {ADDR_WIDTH{1'b0}};
-            end
-        end else if (pixel_valid) begin
+            column_addr <= {{(ADDR_WIDTH-1){1'b0}}, 1'b1};
+        end else if (stream_advance) begin
             if (column_addr == line_width_minus_one) begin
                 column_addr <= {ADDR_WIDTH{1'b0}};
             end else begin
@@ -195,7 +215,7 @@ always @(posedge clk) begin
         addr_delayed2  <= addr_delayed1;
         addr_delayed3  <= addr_delayed2;
 
-        valid_delayed1 <= pixel_valid;
+        valid_delayed1 <= stream_advance;
         valid_delayed2 <= valid_delayed1;
         valid_delayed3 <= valid_delayed2;
 
@@ -209,7 +229,12 @@ always @(posedge clk) begin
         h_sync_d3      <= h_sync_d2;
         h_sync_d4      <= h_sync_d3;
 
-        current_pixel_delayed1 <= pixel_in;
+        v_sync_d1      <= v_sync;
+        v_sync_d2      <= v_sync_d1;
+        v_sync_d3      <= v_sync_d2;
+        v_sync_d4      <= v_sync_d3;
+
+        current_pixel_delayed1 <= pixel_or_black;
         current_pixel_delayed2 <= current_pixel_delayed1;
         current_pixel_delayed3 <= current_pixel_delayed2;
         current_pixel_delayed4 <= current_pixel_delayed3;
@@ -231,9 +256,9 @@ bram_line_buffer_ram #(
     .ADDR_WIDTH(ADDR_WIDTH)
 ) bram_line_0 (
     .clk(clk),
-    .en(pixel_valid),
+    .en(stream_advance),
     .addr(addr_current),
-    .din(pixel_in),
+    .din(pixel_or_black),
     .dout(line_1_bram_pixel)
 );
 
@@ -281,5 +306,6 @@ assign line_4_pixel     = line_4_bram_pixel;
 
 assign pixel_valid_out  = pixel_valid_d4;
 assign h_sync_out       = h_sync_d4;
+assign v_sync_out       = v_sync_d4;
 
 endmodule
