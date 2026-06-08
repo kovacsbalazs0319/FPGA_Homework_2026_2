@@ -1,0 +1,24 @@
+#-----------------------------------------------------------
+# Vivado v2025.2 (64-bit)
+# SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
+# IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
+# SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
+# Start of session at: Sat Jun  6 22:54:30 2026
+# Process ID         : 8552
+# Current directory  : C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/cpu_hdmi_system_ilmb_v10_0_synth_1
+# Command line       : vivado.exe -log cpu_hdmi_system_ilmb_v10_0.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source cpu_hdmi_system_ilmb_v10_0.tcl
+# Log file           : C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/cpu_hdmi_system_ilmb_v10_0_synth_1/cpu_hdmi_system_ilmb_v10_0.vds
+# Journal file       : C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/cpu_hdmi_system_ilmb_v10_0_synth_1\vivado.jou
+# Running On         : DESKTOP-H73H9I1
+# Platform           : Windows Server 2016 or Windows 10
+# Operating System   : 26200
+# Processor Detail   : AMD Ryzen 7 5800H with Radeon Graphics         
+# CPU Frequency      : 3194 MHz
+# CPU Physical cores : 8
+# CPU Logical cores  : 16
+# Host memory        : 16541 MB
+# Swap memory        : 16386 MB
+# Total Virtual      : 32928 MB
+# Available Virtual  : 6464 MB
+#-----------------------------------------------------------
+source cpu_hdmi_system_ilmb_v10_0.tcl -notrace

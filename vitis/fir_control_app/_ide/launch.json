@@ -1,0 +1,45 @@
+{
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "tcf-debug",
+			"request": "launch",
+			"name": "fir_control_app_app_hw_1",
+			"debugType": "baremetal-fpga",
+			"attachToRunningTargetOptions": {
+				"targetSetupMode": "standalone",
+				"executeScript": true,
+				"scriptPath": ""
+			},
+			"autoAttachProcessChildren": false,
+			"target": {
+				"targetConnectionId": "Local",
+				"peersIniPath": "../../_ide/.peers.ini",
+				"context": "fpga"
+			},
+			"pathMap": [],
+			"targetSetup": {
+				"resetSystem": false,
+				"programDevice": true,
+				"partialBitstream": false,
+				"skipRevisionCheck": false,
+				"device": {
+					"plDevice": "Auto Detect",
+					"psDevice": "Auto Detect"
+				},
+				"bitstreamFile": "${workspaceFolder}\\fir_control_app\\_ide\\bitstream\\hdmi_top.bit",
+				"downloadElf": [
+					{
+						"core": "microblaze_riscv_0",
+						"resetProcessor": true,
+						"elfFile": "${workspaceFolder}\\fir_control_app\\build\\fir_control_app.elf",
+						"stopAtEntry": false,
+						"isSelfRelocatingApp": false,
+						"relativeAddress": ""
+					}
+				]
+			},
+			"internalConsoleOptions": "openOnSessionStart"
+		}
+	]
+}

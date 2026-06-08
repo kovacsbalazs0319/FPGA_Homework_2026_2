@@ -1,0 +1,9 @@
+axi_uartlite_0:
+- axi_uartlite
+- uartlite
+fir_coeff_bank_axi_0:
+- fir_coeff_bank_axi
+- None
+microblaze_riscv_0_local_memory_dlmb_bram_if_cntlr:
+- lmb_bram_if_cntlr
+- bram

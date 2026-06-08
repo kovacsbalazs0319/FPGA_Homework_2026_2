@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date             : Sat Jun  6 16:32:22 2026
+| Date             : Mon Jun  8 16:33:39 2026
 | Host             : DESKTOP-H73H9I1 running 64-bit major release  (build 9200)
 | Command          : report_power -file hdmi_top_power_routed.rpt -pb hdmi_top_power_summary_routed.pb -rpx hdmi_top_power_routed.rpx
 | Design           : hdmi_top
@@ -30,15 +30,15 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.509        |
+| Total On-Chip Power (W)  | 0.633        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.426        |
-| Device Static (W)        | 0.084        |
+| Dynamic (W)              | 0.548        |
+| Device Static (W)        | 0.085        |
 | Effective TJA (C/W)      | 1.9          |
-| Max Ambient (C)          | 84.0         |
-| Junction Temperature (C) | 26.0         |
-| Confidence Level         | Medium       |
+| Max Ambient (C)          | 83.8         |
+| Junction Temperature (C) | 26.2         |
+| Confidence Level         | Low          |
 | Setting File             | ---          |
 | Simulation Activity File | ---          |
 | Design Nets Matched      | NA           |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.011 |        9 |       --- |             --- |
-| Slice Logic              |    <0.001 |     1578 |       --- |             --- |
-|   LUT as Logic           |    <0.001 |      371 |     41000 |            0.90 |
-|   Register               |    <0.001 |      844 |     82000 |            1.03 |
-|   CARRY4                 |    <0.001 |       24 |     10250 |            0.23 |
-|   LUT as Distributed RAM |    <0.001 |       24 |     13400 |            0.18 |
-|   Others                 |    <0.001 |      178 |       --- |             --- |
-|   F7/F8 Muxes            |    <0.001 |        8 |     41000 |            0.02 |
-|   LUT as Shift Register  |     0.000 |       11 |     13400 |            0.08 |
-| Signals                  |     0.004 |     2892 |       --- |             --- |
-| Block RAM                |     0.008 |        3 |       135 |            2.22 |
-| MMCM                     |     0.108 |        1 |         6 |           16.67 |
+| Clocks                   |     0.024 |       15 |       --- |             --- |
+| Slice Logic              |     0.006 |     9173 |       --- |             --- |
+|   LUT as Logic           |     0.005 |     3424 |     41000 |            8.35 |
+|   Register               |    <0.001 |     3867 |     82000 |            4.72 |
+|   LUT as Distributed RAM |    <0.001 |       88 |     13400 |            0.66 |
+|   CARRY4                 |    <0.001 |       96 |     10250 |            0.94 |
+|   F7/F8 Muxes            |    <0.001 |      135 |     41000 |            0.33 |
+|   LUT as Shift Register  |    <0.001 |       54 |     13400 |            0.40 |
+|   Others                 |    <0.001 |      629 |       --- |             --- |
+| Signals                  |     0.012 |     8484 |       --- |             --- |
+| Block RAM                |     0.009 |       19 |       135 |           14.07 |
+| MMCM                     |     0.213 |        2 |         6 |           33.33 |
 | PLL                      |     0.109 |        1 |         6 |           16.67 |
-| DSPs                     |     0.012 |       29 |       240 |           12.08 |
-| I/O                      |     0.173 |       29 |       300 |            9.67 |
-| Static Power             |     0.084 |          |           |                 |
-| Total                    |     0.509 |          |           |                 |
+| DSPs                     |     0.002 |       29 |       240 |           12.08 |
+| I/O                      |     0.173 |       31 |       300 |           10.33 |
+| Static Power             |     0.085 |          |           |                 |
+| Total                    |     0.633 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,8 +78,8 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.075 |       0.052 |      0.022 |       NA    | Unspecified | NA         |
-| Vccaux    |       1.800 |     0.145 |       0.133 |      0.012 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.092 |       0.069 |      0.023 |       NA    | Unspecified | NA         |
+| Vccaux    |       1.800 |     0.204 |       0.192 |      0.012 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.041 |       0.040 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco18    |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -87,7 +87,7 @@ Table of Contents
 | Vcco135   |       1.350 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vcco12    |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | Vccaux_io |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
-| Vccbram   |       1.000 |     0.001 |       0.001 |      0.000 |       NA    | Unspecified | NA         |
+| Vccbram   |       1.000 |     0.002 |       0.001 |      0.001 |       NA    | Unspecified | NA         |
 | MGTAVcc   |       1.000 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTAVtt   |       1.200 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
 | MGTVccaux |       1.800 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -98,17 +98,17 @@ Table of Contents
 1.3 Confidence Level
 --------------------
 
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| User Input Data             | Confidence | Details                                               | Action                                                                                                     |
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
-| Design implementation state | High       | Design is routed                                      |                                                                                                            |
-| Clock nodes activity        | High       | User specified more than 95% of clocks                |                                                                                                            |
-| I/O nodes activity          | Medium     | More than 5% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
-| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes        | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
-| Device models               | High       | Device models are Production                          |                                                                                                            |
-|                             |            |                                                       |                                                                                                            |
-| Overall confidence level    | Medium     |                                                       |                                                                                                            |
-+-----------------------------+------------+-------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| User Input Data             | Confidence | Details                                                | Action                                                                                                     |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
+| Design implementation state | High       | Design is routed                                       |                                                                                                            |
+| Clock nodes activity        | High       | User specified more than 95% of clocks                 |                                                                                                            |
+| I/O nodes activity          | Low        | More than 75% of inputs are missing user specification | Provide missing input activity with simulation results or by editing the "By Resource Type -> I/Os" view   |
+| Internal nodes activity     | Medium     | User specified less than 25% of internal nodes         | Provide missing internal nodes activity with simulation results or by editing the "By Resource Type" views |
+| Device models               | High       | Device models are Production                           |                                                                                                            |
+|                             |            |                                                        |                                                                                                            |
+| Overall confidence level    | Low        |                                                        |                                                                                                            |
++-----------------------------+------------+--------------------------------------------------------+------------------------------------------------------------------------------------------------------------+
 
 
 2. Settings
@@ -132,17 +132,23 @@ Table of Contents
 2.2 Clock Constraints
 ---------------------
 
-+---------------+------------------------+-----------------+
-| Clock         | Domain                 | Constraint (ns) |
-+---------------+------------------------+-----------------+
-| clk100M       | clk100M                |            10.0 |
-| clk200M       | clk200M                |             5.0 |
-| hdmi_rx_clk_p | hdmi_rx_clk_p          |            10.0 |
-| mmcm_clkfb    | hdmi_rx_0/mmcm_clkfb   |            10.0 |
-| mmcm_clkout1  | hdmi_rx_0/mmcm_clkout1 |             2.0 |
-| mmcm_clkout2  | hdmi_rx_0/mmcm_clkout2 |            10.0 |
-| pll_clkfb     | pll_clkfb              |            10.0 |
-+---------------+------------------------+-----------------+
++----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+-----------------+
+| Clock                                                                                                    | Domain                                                                                                   | Constraint (ns) |
++----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+-----------------+
+| clk100M                                                                                                  | clk100M                                                                                                  |            10.0 |
+| clk100M                                                                                                  | clk100M_IBUF                                                                                             |            10.0 |
+| clk200M                                                                                                  | clk200M                                                                                                  |             5.0 |
+| clk_out1_cpu_hdmi_system_clk_wiz_1_0                                                                     | processor_inst/inst/clk_wiz_1/inst/clk_out1_cpu_hdmi_system_clk_wiz_1_0                                  |            10.0 |
+| clkfbout_cpu_hdmi_system_clk_wiz_1_0                                                                     | processor_inst/inst/clk_wiz_1/inst/clkfbout_cpu_hdmi_system_clk_wiz_1_0                                  |            10.0 |
+| hdmi_rx_clk_p                                                                                            | hdmi_rx_clk_p                                                                                            |            10.0 |
+| mmcm_clkfb                                                                                               | hdmi_rx_0/mmcm_clkfb                                                                                     |            10.0 |
+| mmcm_clkout1                                                                                             | hdmi_rx_0/mmcm_clkout1                                                                                   |             2.0 |
+| mmcm_clkout2                                                                                             | hdmi_rx_0/mmcm_clkout2                                                                                   |            10.0 |
+| pll_clkfb                                                                                                | pll_clkfb                                                                                                |            10.0 |
+| processor_inst/inst/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native/O | processor_inst/inst/mdm_1/U0/MDM_Core_I1/JTAG_CONTROL_I/Test_Access_Port.BUFG_UPDATE/Using_FPGA.Native_0 |            66.7 |
+| processor_inst/inst/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/TCK                                         | processor_inst/inst/mdm_1/U0/Use_E2.BSCAN_I/tck                                                          |            33.3 |
+| processor_inst/inst/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I/UPDATE                                      | processor_inst/inst/mdm_1/U0/Use_E2.BSCAN_I/Use_E2.BSCANE2_I_n_9                                         |            33.3 |
++----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+-----------------+
 
 
 3. Detailed Reports
@@ -151,33 +157,36 @@ Table of Contents
 3.1 By Hierarchy
 ----------------
 
-+----------------------+-----------+
-| Name                 | Power (W) |
-+----------------------+-----------+
-| hdmi_top             |     0.426 |
-|   fir_0              |     0.017 |
-|     row_0            |     0.002 |
-|     row_1            |     0.003 |
-|     row_2            |     0.003 |
-|     row_3            |     0.003 |
-|     row_4            |     0.004 |
-|       dsp_cell_4     |     0.001 |
-|   hdmi_rx_0          |     0.154 |
-|     edid_rom         |     0.002 |
-|     tmds_receiver    |     0.041 |
-|       decoder_b      |     0.014 |
-|       decoder_g      |     0.013 |
-|       decoder_r      |     0.013 |
-|   hdmi_tx_0          |     0.138 |
-|     tmds_transmitter |     0.138 |
-|       oserdes0       |     0.034 |
-|       oserdes1       |     0.034 |
-|       oserdes2       |     0.034 |
-|   line_buffer_0      |     0.007 |
-|     bram_line_0      |     0.001 |
-|     bram_line_1      |     0.001 |
-|     bram_line_2      |     0.001 |
-|     bram_line_3      |     0.001 |
-+----------------------+-----------+
++-------------------------------------+-----------+
+| Name                                | Power (W) |
++-------------------------------------+-----------+
+| hdmi_top                            |     0.548 |
+|   fir_0                             |     0.007 |
+|     row_1                           |     0.001 |
+|     row_2                           |     0.002 |
+|     row_3                           |     0.001 |
+|   hdmi_rx_0                         |     0.155 |
+|     edid_rom                        |     0.002 |
+|     tmds_receiver                   |     0.041 |
+|       decoder_b                     |     0.014 |
+|       decoder_g                     |     0.013 |
+|       decoder_r                     |     0.013 |
+|   hdmi_tx_0                         |     0.138 |
+|     tmds_transmitter                |     0.138 |
+|       oserdes0                      |     0.034 |
+|       oserdes1                      |     0.034 |
+|       oserdes2                      |     0.034 |
+|   line_buffer_0                     |     0.007 |
+|     bram_line_0                     |     0.001 |
+|     bram_line_1                     |     0.001 |
+|     bram_line_2                     |     0.001 |
+|     bram_line_3                     |     0.001 |
+|   processor_inst                    |     0.131 |
+|     inst                            |     0.131 |
+|       clk_wiz_1                     |     0.106 |
+|       fir_coeff_bank_axi_0          |     0.003 |
+|       microblaze_riscv_0            |     0.015 |
+|       microblaze_riscv_0_axi_periph |     0.003 |
++-------------------------------------+-----------+
 
 

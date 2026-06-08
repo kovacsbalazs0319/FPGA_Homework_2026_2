@@ -106,8 +106,8 @@ set rc [catch {
   create_msg_db init_design.pb
   set_param general.usePosixSpawnForFork 1
   set_param chipscope.maxJobs 4
-  set_param xicom.use_bs_reader 1
-  set_param runs.launchOptions { -jobs 8  }
+  set_param bd.open.in_stealth_mode 1
+  set_param runs.launchOptions { -jobs 12  }
 OPTRACE "create in-memory project" START { }
   create_project -in_memory -part xc7k70tfbg676-1
   set_property design_mode GateLvl [current_fileset]
@@ -116,11 +116,18 @@ OPTRACE "create in-memory project" END { }
 OPTRACE "set parameters" START { }
   set_property webtalk.parent_dir C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.cache/wt [current_project]
   set_property parent.project_path C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.xpr [current_project]
+  set_property ip_repo_paths C:/Users/Balazs/Desktop/MSC1/FPGA/homework/ip_repo/fir_coeff_bank_axi_1_0 [current_project]
+  update_ip_catalog
   set_property ip_output_repo C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.cache/ip [current_project]
   set_property ip_cache_permissions {read write} [current_project]
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 OPTRACE "set parameters" END { }
 OPTRACE "add files" START { }
   add_files -quiet C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/hdmi_top.dcp
+  set_msg_config -source 4 -id {BD 41-1661} -limit 0
+  set_param project.isImplRun true
+  add_files C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/bd/cpu_hdmi_system/cpu_hdmi_system.bd
+  set_param project.isImplRun false
   read_edif C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_tx.edn
   read_edif C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.edn
 OPTRACE "read constraints: implementation" START { }
@@ -131,8 +138,10 @@ OPTRACE "read constraints: implementation_pre" START { }
 OPTRACE "read constraints: implementation_pre" END { }
 OPTRACE "add files" END { }
 OPTRACE "link_design" START { }
+  set_param project.isImplRun true
   link_design -top hdmi_top -part xc7k70tfbg676-1 
 OPTRACE "link_design" END { }
+  set_param project.isImplRun false
 OPTRACE "gray box cells" START { }
 OPTRACE "gray box cells" END { }
 OPTRACE "init_design_reports" START { REPORT }
@@ -291,7 +300,9 @@ set rc [catch {
   create_msg_db write_bitstream.pb
 OPTRACE "read constraints: write_bitstream" START { }
 OPTRACE "read constraints: write_bitstream" END { }
+  set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
   catch { write_mem_info -force -no_partial_mmi hdmi_top.mmi }
+  catch { write_bmm -force hdmi_top_bd.bmm }
 OPTRACE "write_bitstream setup" END { }
 OPTRACE "write_bitstream" START { }
   write_bitstream -force hdmi_top.bit 

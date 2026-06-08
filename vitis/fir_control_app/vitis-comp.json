@@ -1,0 +1,17 @@
+{
+  "name": "fir_control_app",
+  "type": "HOST",
+  "platform": "hdmi_fir_platform",
+  "domain": "standalone_microblaze_riscv_0",
+  "cpuInstance": "microblaze_riscv_0",
+  "cpuType": "microblaze_riscv",
+  "os": "standalone",
+  "configuration": {
+    "componentType": "HOST",
+    "hostToolchainConfigurations": []
+  },
+  "domainRealName": "standalone_microblaze_riscv_0",
+  "useSysrootToolchain": false,
+  "applicationFlow": "EMBEDDED",
+  "templateFlow": "VITIS"
+}

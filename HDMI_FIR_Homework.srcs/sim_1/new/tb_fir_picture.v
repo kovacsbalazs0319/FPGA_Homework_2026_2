@@ -70,7 +70,6 @@ integer file_in, file_out;
 integer file_status;
 integer out_count = 0;
 integer valid_count = 0;
-integer sample_debug_count = 0;
 reg [7:0] mem_in [0:RES*RES*3-1];
 
 reg [15:0] col = 16'hffff;
@@ -229,15 +228,6 @@ always @(negedge clk) begin
         $fwrite(file_out, "%c", fir_out_sat);
         out_count = out_count + 1;
         valid_count = valid_count + 1;
-        if (sample_debug_count < 32) begin
-            $display("PIXDBG: n=%0d row=%0d col=%0d rgb=(%0d,%0d,%0d) y=%0d taps={%0d,%0d,%0d,%0d,%0d} sat=%0d",
-                     sample_debug_count, row, col, r_i, g_i, b_i, pixel_y,
-                     pixel_4_fir[7:0], pixel_3_fir[7:0], pixel_2_fir[7:0], pixel_1_fir[7:0], pixel_0_fir[7:0],
-                     fir_out_sat);
-            sample_debug_count = sample_debug_count + 1;
-        end
-        if ((out_count % 16384) == 0)
-            $display("PROGRESS: wrote %0d pixels", out_count);
     end
 end
 

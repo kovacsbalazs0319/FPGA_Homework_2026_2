@@ -26,6 +26,8 @@ module hdmi_top(
    output wire [7:0] led_r,
    input  wire [7:0] sw,
    inout  wire [3:0] bt,
+   input  wire       uart_rxd,
+   output wire       uart_txd,
    
    input  wire       hdmi_rx_d0_p,
    input  wire       hdmi_rx_d0_n,
@@ -146,36 +148,36 @@ hdmi_rx hdmi_rx_0(
 localparam integer FIR_LINE_WIDTH = 2048;
 localparam integer FIR_ADDR_WIDTH = 11;
 
-localparam signed [15:0] FIR_COEFF_00 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_01 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_02 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_03 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_04 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_10 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_11 = -16'sd256;
-localparam signed [15:0] FIR_COEFF_12 = -16'sd256;
-localparam signed [15:0] FIR_COEFF_13 = -16'sd256;
-localparam signed [15:0] FIR_COEFF_14 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_20 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_21 = -16'sd256;
-localparam signed [15:0] FIR_COEFF_22 = 16'sd2048;
-localparam signed [15:0] FIR_COEFF_23 = -16'sd256;
-localparam signed [15:0] FIR_COEFF_24 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_30 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_31 = -16'sd256;
-localparam signed [15:0] FIR_COEFF_32 = -16'sd256;
-localparam signed [15:0] FIR_COEFF_33 = -16'sd256;
-localparam signed [15:0] FIR_COEFF_34 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_40 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_41 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_42 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_43 = 16'sd0;
-localparam signed [15:0] FIR_COEFF_44 = 16'sd0;
-
 wire rgb2y_dv;
 wire rgb2y_hs;
 wire rgb2y_vs;
 wire [7:0] rgb2y_y;
+wire [399:0] coeff_wire;
+wire signed [15:0] fir_coeff_00;
+wire signed [15:0] fir_coeff_01;
+wire signed [15:0] fir_coeff_02;
+wire signed [15:0] fir_coeff_03;
+wire signed [15:0] fir_coeff_04;
+wire signed [15:0] fir_coeff_10;
+wire signed [15:0] fir_coeff_11;
+wire signed [15:0] fir_coeff_12;
+wire signed [15:0] fir_coeff_13;
+wire signed [15:0] fir_coeff_14;
+wire signed [15:0] fir_coeff_20;
+wire signed [15:0] fir_coeff_21;
+wire signed [15:0] fir_coeff_22;
+wire signed [15:0] fir_coeff_23;
+wire signed [15:0] fir_coeff_24;
+wire signed [15:0] fir_coeff_30;
+wire signed [15:0] fir_coeff_31;
+wire signed [15:0] fir_coeff_32;
+wire signed [15:0] fir_coeff_33;
+wire signed [15:0] fir_coeff_34;
+wire signed [15:0] fir_coeff_40;
+wire signed [15:0] fir_coeff_41;
+wire signed [15:0] fir_coeff_42;
+wire signed [15:0] fir_coeff_43;
+wire signed [15:0] fir_coeff_44;
 
 wire [7:0] current_pixel;
 wire [7:0] line_1_pixel;
@@ -203,6 +205,40 @@ wire [7:0] tx_blue;
 wire tx_dv;
 wire tx_hs;
 wire tx_vs;
+
+cpu_hdmi_system_sv processor_inst (
+   .rstbtn(rstbt),
+   .clk_in(clk100M),
+   .uart_rx(uart_rxd),
+   .uart_tx(uart_txd),
+   .coeff_out_0(coeff_wire)
+);
+
+assign fir_coeff_00 = coeff_wire[15:0];
+assign fir_coeff_01 = coeff_wire[31:16];
+assign fir_coeff_02 = coeff_wire[47:32];
+assign fir_coeff_03 = coeff_wire[63:48];
+assign fir_coeff_04 = coeff_wire[79:64];
+assign fir_coeff_10 = coeff_wire[95:80];
+assign fir_coeff_11 = coeff_wire[111:96];
+assign fir_coeff_12 = coeff_wire[127:112];
+assign fir_coeff_13 = coeff_wire[143:128];
+assign fir_coeff_14 = coeff_wire[159:144];
+assign fir_coeff_20 = coeff_wire[175:160];
+assign fir_coeff_21 = coeff_wire[191:176];
+assign fir_coeff_22 = coeff_wire[207:192];
+assign fir_coeff_23 = coeff_wire[223:208];
+assign fir_coeff_24 = coeff_wire[239:224];
+assign fir_coeff_30 = coeff_wire[255:240];
+assign fir_coeff_31 = coeff_wire[271:256];
+assign fir_coeff_32 = coeff_wire[287:272];
+assign fir_coeff_33 = coeff_wire[303:288];
+assign fir_coeff_34 = coeff_wire[319:304];
+assign fir_coeff_40 = coeff_wire[335:320];
+assign fir_coeff_41 = coeff_wire[351:336];
+assign fir_coeff_42 = coeff_wire[367:352];
+assign fir_coeff_43 = coeff_wire[383:368];
+assign fir_coeff_44 = coeff_wire[399:384];
 
 assign fir_pixel_0 = {17'd0, current_pixel};
 assign fir_pixel_1 = {17'd0, line_1_pixel};
@@ -259,31 +295,31 @@ FIR_filter_5x5 #(
    .pixel_2_i(fir_pixel_2),
    .pixel_3_i(fir_pixel_3),
    .pixel_4_i(fir_pixel_4),
-   .coeff_00_i(FIR_COEFF_00),
-   .coeff_01_i(FIR_COEFF_01),
-   .coeff_02_i(FIR_COEFF_02),
-   .coeff_03_i(FIR_COEFF_03),
-   .coeff_04_i(FIR_COEFF_04),
-   .coeff_10_i(FIR_COEFF_10),
-   .coeff_11_i(FIR_COEFF_11),
-   .coeff_12_i(FIR_COEFF_12),
-   .coeff_13_i(FIR_COEFF_13),
-   .coeff_14_i(FIR_COEFF_14),
-   .coeff_20_i(FIR_COEFF_20),
-   .coeff_21_i(FIR_COEFF_21),
-   .coeff_22_i(FIR_COEFF_22),
-   .coeff_23_i(FIR_COEFF_23),
-   .coeff_24_i(FIR_COEFF_24),
-   .coeff_30_i(FIR_COEFF_30),
-   .coeff_31_i(FIR_COEFF_31),
-   .coeff_32_i(FIR_COEFF_32),
-   .coeff_33_i(FIR_COEFF_33),
-   .coeff_34_i(FIR_COEFF_34),
-   .coeff_40_i(FIR_COEFF_40),
-   .coeff_41_i(FIR_COEFF_41),
-   .coeff_42_i(FIR_COEFF_42),
-   .coeff_43_i(FIR_COEFF_43),
-   .coeff_44_i(FIR_COEFF_44),
+   .coeff_00_i(fir_coeff_00),
+   .coeff_01_i(fir_coeff_01),
+   .coeff_02_i(fir_coeff_02),
+   .coeff_03_i(fir_coeff_03),
+   .coeff_04_i(fir_coeff_04),
+   .coeff_10_i(fir_coeff_10),
+   .coeff_11_i(fir_coeff_11),
+   .coeff_12_i(fir_coeff_12),
+   .coeff_13_i(fir_coeff_13),
+   .coeff_14_i(fir_coeff_14),
+   .coeff_20_i(fir_coeff_20),
+   .coeff_21_i(fir_coeff_21),
+   .coeff_22_i(fir_coeff_22),
+   .coeff_23_i(fir_coeff_23),
+   .coeff_24_i(fir_coeff_24),
+   .coeff_30_i(fir_coeff_30),
+   .coeff_31_i(fir_coeff_31),
+   .coeff_32_i(fir_coeff_32),
+   .coeff_33_i(fir_coeff_33),
+   .coeff_34_i(fir_coeff_34),
+   .coeff_40_i(fir_coeff_40),
+   .coeff_41_i(fir_coeff_41),
+   .coeff_42_i(fir_coeff_42),
+   .coeff_43_i(fir_coeff_43),
+   .coeff_44_i(fir_coeff_44),
    .fir_out_sat(fir_out_sat),
    .pixel_valid_out(fir_dv),
    .h_sync_out(fir_hs),

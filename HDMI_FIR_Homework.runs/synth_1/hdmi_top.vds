@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Sat Jun  6 16:28:53 2026
-# Process ID         : 20456
+# Start of session at: Mon Jun  8 16:24:55 2026
+# Process ID         : 17448
 # Current directory  : C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1
 # Command line       : vivado.exe -log hdmi_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_top.tcl
 # Log file           : C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/hdmi_top.vds
@@ -19,10 +19,14 @@
 # Host memory        : 16541 MB
 # Swap memory        : 5637 MB
 # Total Virtual      : 22178 MB
-# Available Virtual  : 4993 MB
+# Available Virtual  : 3329 MB
 #-----------------------------------------------------------
 source hdmi_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 524.117 ; gain = 217.941
+create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 523.777 ; gain = 218.102
+INFO: [IP_Flow 19-234] Refreshing IP repositories
+INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Balazs/Desktop/MSC1/FPGA/homework/ip_repo/fir_coeff_bank_axi_1_0'.
+INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'.
+add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 562.754 ; gain = 34.016
 Command: read_checkpoint -auto_incremental -incremental C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/utils_1/imports/synth_1/hdmi_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/utils_1/imports/synth_1/hdmi_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -35,9 +39,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4484
+INFO: [Synth 8-7075] Helper process launched with PID 4000
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:10 ; elapsed = 00:00:11 . Memory (MB): peak = 1255.219 ; gain = 542.562
+Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1307.008 ; gain = 541.727
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'hdmi_top' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_top.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PLLE2_BASE' [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:133986]
@@ -71,6 +75,55 @@ INFO: [Synth 8-6157] synthesizing module 'BUFG' [C:/AMDDesignTools/2025.2/Vivado
 INFO: [Synth 8-6155] done synthesizing module 'BUFG' (0#1) [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:2678]
 INFO: [Synth 8-6157] synthesizing module 'hdmi_rx' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_rx' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.v:1]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_sv' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/cpu_hdmi_system_sv.sv:55]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:13]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_axi_uartlite_0_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_axi_uartlite_0_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_axi_uartlite_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'interrupt' of module 'cpu_hdmi_system_axi_uartlite_0_0' is unconnected for instance 'axi_uartlite_0' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:121]
+WARNING: [Synth 8-7023] instance 'axi_uartlite_0' of module 'cpu_hdmi_system_axi_uartlite_0_0' has 22 connections declared, but only 21 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:121]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_clk_wiz_1_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_clk_wiz_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_clk_wiz_1_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_clk_wiz_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_fir_coeff_bank_axi_0_2' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_fir_coeff_bank_axi_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_fir_coeff_bank_axi_0_2' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_fir_coeff_bank_axi_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_mdm_1_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_mdm_1_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'Interrupt_Ack' of module 'cpu_hdmi_system_microblaze_riscv_0_0' is unconnected for instance 'microblaze_riscv_0' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:184]
+WARNING: [Synth 8-7071] port 'Dbg_Trig_In' of module 'cpu_hdmi_system_microblaze_riscv_0_0' is unconnected for instance 'microblaze_riscv_0' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:184]
+WARNING: [Synth 8-7071] port 'Dbg_Trig_Ack_Out' of module 'cpu_hdmi_system_microblaze_riscv_0_0' is unconnected for instance 'microblaze_riscv_0' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:184]
+WARNING: [Synth 8-7023] instance 'microblaze_riscv_0' of module 'cpu_hdmi_system_microblaze_riscv_0_0' has 56 connections declared, but only 53 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:184]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' is unconnected for instance 'microblaze_riscv_0_axi_periph' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:238]
+WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' is unconnected for instance 'microblaze_riscv_0_axi_periph' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:238]
+WARNING: [Synth 8-7023] instance 'microblaze_riscv_0_axi_periph' of module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' has 59 connections declared, but only 57 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:238]
+INFO: [Synth 8-6157] synthesizing module 'microblaze_riscv_0_local_memory_imp_1FKUDYT' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:329]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_dlmb_bram_if_cntlr_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_dlmb_bram_if_cntlr_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_dlmb_v10_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_dlmb_v10_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_v10_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'cpu_hdmi_system_dlmb_v10_0' is unconnected for instance 'dlmb_v10' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:454]
+WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'cpu_hdmi_system_dlmb_v10_0' has 25 connections declared, but only 24 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:454]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_ilmb_bram_if_cntlr_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_ilmb_bram_if_cntlr_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_ilmb_v10_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_ilmb_v10_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_v10_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'cpu_hdmi_system_ilmb_v10_0' is unconnected for instance 'ilmb_v10' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:500]
+WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'cpu_hdmi_system_ilmb_v10_0' has 25 connections declared, but only 24 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:500]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_lmb_bram_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_lmb_bram_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_lmb_bram_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'rsta_busy' of module 'cpu_hdmi_system_lmb_bram_0' is unconnected for instance 'lmb_bram' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:525]
+WARNING: [Synth 8-7071] port 'rstb_busy' of module 'cpu_hdmi_system_lmb_bram_0' is unconnected for instance 'lmb_bram' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:525]
+WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'cpu_hdmi_system_lmb_bram_0' has 16 connections declared, but only 14 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:525]
+INFO: [Synth 8-6155] done synthesizing module 'microblaze_riscv_0_local_memory_imp_1FKUDYT' (0#1) [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:329]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_rst_clk_wiz_1_100M_0_stub.v:6]
+WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:318]
+WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:318]
+WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 8 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:318]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system' (0#1) [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:13]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_sv' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/cpu_hdmi_system_sv.sv:55]
 INFO: [Synth 8-6157] synthesizing module 'rgb2y' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/rgb2y.v:1]
 INFO: [Synth 8-6157] synthesizing module 'dsp' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/dsp.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'dsp' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/dsp.v:23]
@@ -120,59 +173,89 @@ WARNING: [Synth 8-7129] Port hdmi_tx_hpdn in module hdmi_top is either unconnect
 WARNING: [Synth 8-7129] Port hdmi_tx_scl in module hdmi_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port hdmi_tx_sda in module hdmi_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1375.969 ; gain = 663.312
+Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1439.688 ; gain = 674.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1375.969 ; gain = 663.312
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1439.688 ; gain = 674.406
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:14 ; elapsed = 00:00:15 . Memory (MB): peak = 1375.969 ; gain = 663.312
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1439.688 ; gain = 674.406
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.179 . Memory (MB): peak = 1375.969 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.299 . Memory (MB): peak = 1439.688 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
 
 Processing XDC Constraints
 Initializing timing engine
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_0/cpu_hdmi_system_microblaze_riscv_0_0/cpu_hdmi_system_microblaze_riscv_0_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_0/cpu_hdmi_system_microblaze_riscv_0_0/cpu_hdmi_system_microblaze_riscv_0_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_dlmb_v10_0/cpu_hdmi_system_dlmb_v10_0/cpu_hdmi_system_dlmb_v10_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/dlmb_v10'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_dlmb_v10_0/cpu_hdmi_system_dlmb_v10_0/cpu_hdmi_system_dlmb_v10_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/dlmb_v10'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_ilmb_v10_0/cpu_hdmi_system_ilmb_v10_0/cpu_hdmi_system_dlmb_v10_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/ilmb_v10'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_ilmb_v10_0/cpu_hdmi_system_ilmb_v10_0/cpu_hdmi_system_dlmb_v10_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/ilmb_v10'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_dlmb_bram_if_cntlr_0/cpu_hdmi_system_dlmb_bram_if_cntlr_0/cpu_hdmi_system_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_dlmb_bram_if_cntlr_0/cpu_hdmi_system_dlmb_bram_if_cntlr_0/cpu_hdmi_system_dlmb_bram_if_cntlr_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/dlmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_ilmb_bram_if_cntlr_0/cpu_hdmi_system_ilmb_bram_if_cntlr_0/cpu_hdmi_system_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_ilmb_bram_if_cntlr_0/cpu_hdmi_system_ilmb_bram_if_cntlr_0/cpu_hdmi_system_ilmb_bram_if_cntlr_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/ilmb_bram_if_cntlr'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_lmb_bram_0/cpu_hdmi_system_lmb_bram_0/cpu_hdmi_system_lmb_bram_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/lmb_bram'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_lmb_bram_0/cpu_hdmi_system_lmb_bram_0/cpu_hdmi_system_lmb_bram_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_local_memory/lmb_bram'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_axi_periph'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0_in_context.xdc] for cell 'processor_inst/inst/microblaze_riscv_0_axi_periph'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_mdm_1_0/cpu_hdmi_system_mdm_1_0/cpu_hdmi_system_mdm_1_0_in_context.xdc] for cell 'processor_inst/inst/mdm_1'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_mdm_1_0/cpu_hdmi_system_mdm_1_0/cpu_hdmi_system_mdm_1_0_in_context.xdc] for cell 'processor_inst/inst/mdm_1'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_clk_wiz_1_0/cpu_hdmi_system_clk_wiz_1_0/cpu_hdmi_system_clk_wiz_1_0_in_context.xdc] for cell 'processor_inst/inst/clk_wiz_1'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_clk_wiz_1_0/cpu_hdmi_system_clk_wiz_1_0/cpu_hdmi_system_clk_wiz_1_0_in_context.xdc] for cell 'processor_inst/inst/clk_wiz_1'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_rst_clk_wiz_1_100M_0/cpu_hdmi_system_rst_clk_wiz_1_100M_0/cpu_hdmi_system_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'processor_inst/inst/rst_clk_wiz_1_100M'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_rst_clk_wiz_1_100M_0/cpu_hdmi_system_rst_clk_wiz_1_100M_0/cpu_hdmi_system_rst_clk_wiz_1_100M_0_in_context.xdc] for cell 'processor_inst/inst/rst_clk_wiz_1_100M'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_axi_uartlite_0_0/cpu_hdmi_system_axi_uartlite_0_0/cpu_hdmi_system_axi_uartlite_0_0_in_context.xdc] for cell 'processor_inst/inst/axi_uartlite_0'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_axi_uartlite_0_0/cpu_hdmi_system_axi_uartlite_0_0/cpu_hdmi_system_axi_uartlite_0_0_in_context.xdc] for cell 'processor_inst/inst/axi_uartlite_0'
+Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_fir_coeff_bank_axi_0_2/cpu_hdmi_system_fir_coeff_bank_axi_0_2/cpu_hdmi_system_fir_coeff_bank_axi_0_2_in_context.xdc] for cell 'processor_inst/inst/fir_coeff_bank_axi_0'
+Finished Parsing XDC File [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_fir_coeff_bank_axi_0_2/cpu_hdmi_system_fir_coeff_bank_axi_0_2/cpu_hdmi_system_fir_coeff_bank_axi_0_2_in_context.xdc] for cell 'processor_inst/inst/fir_coeff_bank_axi_0'
 Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/chipscope.xdc]
 Finished Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/chipscope.xdc]
 Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc]
+WARNING: [Constraints 18-619] A clock with name 'clk100M' already exists, overwriting the previous clock with the same name. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:57]
+WARNING: [Vivado 12-507] No nets matched 'hdmi_rx_0/mmcm_clkin'. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:59]
 Finished Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc]
+WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/hdmi_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hdmi_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/hdmi_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
+Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/dont_touch.xdc]
+Finished Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/dont_touch.xdc]
 INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1458.852 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1504.523 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   PLLE2_BASE => PLLE2_ADV: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.080 . Memory (MB): peak = 1458.852 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.158 . Memory (MB): peak = 1504.523 ; gain = 0.000
+WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'processor_inst/inst/microblaze_riscv_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1458.852 ; gain = 746.195
+Finished Constraint Validation : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1504.523 ; gain = 739.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k70tfbg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1458.852 ; gain = 746.195
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1504.523 ; gain = 739.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:30 ; elapsed = 00:00:32 . Memory (MB): peak = 1458.852 ; gain = 746.195
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1504.523 ; gain = 739.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:31 ; elapsed = 00:00:32 . Memory (MB): peak = 1458.852 ; gain = 746.195
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 1504.523 ; gain = 739.242
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -227,141 +310,141 @@ DSP Report: register rgb2y_0/dsp_1/p_reg_reg is absorbed into DSP rgb2y_0/dsp_1/
 DSP Report: register rgb2y_0/dsp_1/m_reg_reg is absorbed into DSP rgb2y_0/dsp_1/p_reg_reg.
 DSP Report: operator rgb2y_0/dsp_1/p_reg0 is absorbed into DSP rgb2y_0/dsp_1/p_reg_reg.
 DSP Report: operator rgb2y_0/dsp_1/m_reg0 is absorbed into DSP rgb2y_0/dsp_1/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_0/dsp_cell_0/p_reg_reg, operation Mode is: (A2*(B:0x0)')'.
-DSP Report: register fir_0/row_0/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_0/p_reg_reg.
+DSP Report: Generating DSP fir_0/row_0/dsp_cell_0/p_reg_reg, operation Mode is: (A2*B2)'.
 DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_0/p_reg_reg.
+DSP Report: register fir_0/row_0/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_0/m_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_0/p_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_0/m_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_0/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_0/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_0/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_0/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_1/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_1/m_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_1/p_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_1/m_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_1/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_0/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x0)')')'.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_2/p_reg_reg.
+DSP Report: Generating DSP fir_0/row_0/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_0/dsp_cell_2/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_2/m_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_2/p_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_2/m_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_2/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_0/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_0/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_0/dsp_cell_3/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_3/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_3/m_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_3/p_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_3/m_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_3/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_0/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_0/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_0/dsp_cell_4/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_4/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_0/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_0/dsp_cell_4/m_reg_reg is absorbed into DSP fir_0/row_0/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_4/p_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_0/dsp_cell_4/m_reg0 is absorbed into DSP fir_0/row_0/dsp_cell_4/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_4/dsp_cell_0/p_reg_reg, operation Mode is: (A2*(B:0x0)')'.
+DSP Report: Generating DSP fir_0/row_4/dsp_cell_0/p_reg_reg, operation Mode is: (A2*B2)'.
+DSP Report: register fir_0/row_4/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_0/a_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_0/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_0/m_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_0/p_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_0/m_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_0/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_4/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(ACIN''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_4/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(ACIN''*B2)')'.
+DSP Report: register fir_0/row_4/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_1/a_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_1/a_reg_reg[1] is absorbed into DSP fir_0/row_4/dsp_cell_1/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_1/m_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_1/p_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_1/m_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_1/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_4/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(ACIN''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_4/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(ACIN''*B2)')'.
+DSP Report: register fir_0/row_4/dsp_cell_2/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_2/a_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_2/a_reg_reg[1] is absorbed into DSP fir_0/row_4/dsp_cell_2/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_2/m_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_2/p_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_2/m_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_2/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_4/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(ACIN''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_4/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(ACIN''*B2)')'.
+DSP Report: register fir_0/row_4/dsp_cell_3/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_3/a_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_3/a_reg_reg[1] is absorbed into DSP fir_0/row_4/dsp_cell_3/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_3/m_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_3/p_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_3/m_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_3/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_4/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(ACIN''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_4/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(ACIN''*B2)')'.
+DSP Report: register fir_0/row_4/dsp_cell_4/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_4/a_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_4/a_reg_reg[1] is absorbed into DSP fir_0/row_4/dsp_cell_4/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_4/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_4/dsp_cell_4/m_reg_reg is absorbed into DSP fir_0/row_4/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_4/p_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_4/dsp_cell_4/m_reg0 is absorbed into DSP fir_0/row_4/dsp_cell_4/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_3/dsp_cell_0/p_reg_reg, operation Mode is: (A2*(B:0x0)')'.
+DSP Report: Generating DSP fir_0/row_3/dsp_cell_0/p_reg_reg, operation Mode is: (A2*B2)'.
+DSP Report: register fir_0/row_3/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_0/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_0/m_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_0/p_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_0/m_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_0/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_3/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x3ff00)')')'.
+DSP Report: Generating DSP fir_0/row_3/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_3/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_1/p_reg_reg.
-DSP Report: register fir_0/row_1/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_1/m_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_1/p_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_1/m_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_1/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_3/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x3ff00)')')'.
+DSP Report: Generating DSP fir_0/row_3/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_3/dsp_cell_2/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_2/p_reg_reg.
-DSP Report: register fir_0/row_1/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_2/m_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_2/p_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_2/m_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_2/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_3/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x3ff00)')')'.
-DSP Report: register fir_0/row_1/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_3/p_reg_reg.
+DSP Report: Generating DSP fir_0/row_3/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_3/dsp_cell_3/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_3/m_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_3/p_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_3/m_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_3/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_3/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_3/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_3/dsp_cell_4/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_3/dsp_cell_4/m_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_4/p_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_4/m_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: Generating DSP fir_0/fir_out_o, operation Mode is: PCIN+A:B+C.
 DSP Report: operator fir_0/fir_out_o is absorbed into DSP fir_0/fir_out_o.
-DSP Report: Generating DSP fir_0/row_2/dsp_cell_0/p_reg_reg, operation Mode is: (A2*(B:0x0)')'.
+DSP Report: Generating DSP fir_0/row_2/dsp_cell_0/p_reg_reg, operation Mode is: (A2*B2)'.
+DSP Report: register fir_0/row_2/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_0/m_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_0/p_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_0/m_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_2/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x3ff00)')')'.
-DSP Report: register fir_0/row_1/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_1/p_reg_reg.
+DSP Report: Generating DSP fir_0/row_2/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_2/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_1/m_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_1/p_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_1/m_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_1/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_2/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x800)')')'.
+DSP Report: Generating DSP fir_0/row_2/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
 DSP Report: register fir_0/row_2/dsp_cell_2/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_2/p_reg_reg.
@@ -369,30 +452,30 @@ DSP Report: register fir_0/row_2/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0
 DSP Report: register fir_0/row_2/dsp_cell_2/m_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_2/p_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_2/m_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_2/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_2/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x3ff00)')')'.
-DSP Report: register fir_0/row_1/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_3/p_reg_reg.
+DSP Report: Generating DSP fir_0/row_2/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_2/dsp_cell_3/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_3/m_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_3/p_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_3/m_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_3/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_2/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_2/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_2/dsp_cell_4/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_4/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_4/m_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_4/p_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_2/dsp_cell_4/m_reg0 is absorbed into DSP fir_0/row_2/dsp_cell_4/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_1/dsp_cell_0/p_reg_reg, operation Mode is: (A2*(B:0x0)')'.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_0/p_reg_reg.
+DSP Report: Generating DSP fir_0/row_1/dsp_cell_0/p_reg_reg, operation Mode is: (A2*B2)'.
+DSP Report: register fir_0/row_1/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_0/m_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_0/p_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_0/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_0/m_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_0/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_1/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x3ff00)')')'.
+DSP Report: Generating DSP fir_0/row_1/dsp_cell_1/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
 DSP Report: register fir_0/row_1/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_1/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_1/p_reg_reg.
@@ -400,26 +483,26 @@ DSP Report: register fir_0/row_1/dsp_cell_1/p_reg_reg is absorbed into DSP fir_0
 DSP Report: register fir_0/row_1/dsp_cell_1/m_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_1/p_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_1/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_1/m_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_1/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_1/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x3ff00)')')'.
+DSP Report: Generating DSP fir_0/row_1/dsp_cell_2/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_1/dsp_cell_2/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_2/p_reg_reg.
-DSP Report: register fir_0/row_1/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_2/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_2/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_2/m_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_2/p_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_2/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_2/m_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_2/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_1/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x3ff00)')')'.
-DSP Report: register fir_0/row_1/dsp_cell_1/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_3/p_reg_reg.
+DSP Report: Generating DSP fir_0/row_1/dsp_cell_3/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_1/dsp_cell_3/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_3/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_3/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_3/m_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_3/p_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_3/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_3/m_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_3/p_reg_reg.
-DSP Report: Generating DSP fir_0/row_1/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(A''*(B:0x0)')')'.
+DSP Report: Generating DSP fir_0/row_1/dsp_cell_4/p_reg_reg, operation Mode is: (PCIN+(A''*B2)')'.
+DSP Report: register fir_0/row_1/dsp_cell_4/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
-DSP Report: register fir_0/row_0/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
 DSP Report: register fir_0/row_1/dsp_cell_4/m_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_4/p_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
@@ -445,15 +528,15 @@ WARNING: [Synth 8-7129] Port hdmi_tx_scl in module hdmi_top is either unconnecte
 WARNING: [Synth 8-7129] Port hdmi_tx_sda in module hdmi_top is either unconnected or has no load
 WARNING: [Synth 8-3332] Sequential element (fir_0/row_1/dsp_cell_0/p_reg_reg) is unused and will be removed from module hdmi_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:37 ; elapsed = 00:00:38 . Memory (MB): peak = 1458.852 ; gain = 746.195
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:03 . Memory (MB): peak = 1504.523 ; gain = 739.242
 ---------------------------------------------------------------------------------
- Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 0 : 3500 18388 : Used 1 time 0
- Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 1 : 3532 18388 : Used 1 time 0
- Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 2 : 3532 18388 : Used 1 time 0
- Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 3 : 3532 18388 : Used 1 time 0
- Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 4 : 3532 18388 : Used 1 time 0
- Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 5 : 380 18388 : Used 1 time 0
- Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 6 : 380 18388 : Used 1 time 0
+ Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 0 : 3079 17967 : Used 1 time 0
+ Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 1 : 3532 17967 : Used 1 time 0
+ Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 2 : 3532 17967 : Used 1 time 0
+ Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 3 : 3532 17967 : Used 1 time 0
+ Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 4 : 3532 17967 : Used 1 time 0
+ Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 5 : 380 17967 : Used 1 time 0
+ Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 6 : 380 17967 : Used 1 time 0
  Sort Area is  fir_0/row_1/dsp_cell_0/p_reg_reg_3 : 0 0 : 3500 17628 : Used 1 time 0
  Sort Area is  fir_0/row_1/dsp_cell_0/p_reg_reg_3 : 0 1 : 3532 17628 : Used 1 time 0
  Sort Area is  fir_0/row_1/dsp_cell_0/p_reg_reg_3 : 0 2 : 3532 17628 : Used 1 time 0
@@ -493,39 +576,39 @@ Block RAM: Preliminary Mapping Report (see note below)
 Note: The table above is a preliminary report that shows the Block RAMs at the current stage of the synthesis flow. Some Block RAMs may be reimplemented as non Block RAM primitives later in the synthesis flow. Multiple instantiated Block RAMs are reported only once. 
 
 DSP: Preliminary Mapping Report (see note below. The ' indicates corresponding REG is set)
-+----------------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|Module Name           | DSP Mapping                 | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
-+----------------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
-|dsp                   | (C'+((A:0x6cd9)''*B2)')'    | 9      | 18     | 26     | -      | 48     | 1    | 2    | 1    | -    | -     | 1    | 1    | 
-|dsp                   | (PCIN+((A:0x24f7)''*B2)')'  | 18     | 9      | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (A2*(B:0x0)')'              | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x0)')')'     | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*(B:0x0)')')'     | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x0)')')'     | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x0)')')'     | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (A2*(B:0x0)')'              | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(ACIN''*(B:0x0)')')'  | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(ACIN''*(B:0x0)')')'  | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(ACIN''*(B:0x0)')')'  | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(ACIN''*(B:0x0)')')'  | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (A2*(B:0x0)')'              | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x3ff00)')')' | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x3ff00)')')' | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*(B:0x3ff00)')')' | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x0)')')'     | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | PCIN+A:B+C                  | 30     | 18     | 48     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-|hdmi_top              | (A2*(B:0x0)')'              | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*(B:0x3ff00)')')' | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*(B:0x800)')')'   | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*(B:0x3ff00)')')' | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x0)')')'     | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (A2*(B:0x0)')'              | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*(B:0x3ff00)')')' | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x3ff00)')')' | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*(B:0x3ff00)')')' | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*(B:0x0)')')'     | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | PCIN+A:B+C                  | 30     | 18     | 48     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
-+----------------------+-----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
++----------------------+----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|Module Name           | DSP Mapping                | A Size | B Size | C Size | D Size | P Size | AREG | BREG | CREG | DREG | ADREG | MREG | PREG | 
++----------------------+----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
+|dsp                   | (C'+((A:0x6cd9)''*B2)')'   | 9      | 18     | 26     | -      | 48     | 1    | 2    | 1    | -    | -     | 1    | 1    | 
+|dsp                   | (PCIN+((A:0x24f7)''*B2)')' | 18     | 9      | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (A2*B2)'                   | 25     | 16     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (A2*B2)'                   | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(ACIN''*B2)')'       | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(ACIN''*B2)')'       | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(ACIN''*B2)')'       | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(ACIN''*B2)')'       | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (A2*B2)'                   | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|hdmi_top              | PCIN+A:B+C                 | 30     | 18     | 48     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
+|dsp_25x18_passthrough | (A2*B2)'                   | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (A2*B2)'                   | 25     | 18     | -      | -      | 48     | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B2)')'          | 25     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|hdmi_top              | PCIN+A:B+C                 | 30     | 18     | 48     | -      | -1     | 0    | 0    | 0    | -    | -     | 0    | 0    | 
++----------------------+----------------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 Note: The table above is a preliminary report that shows the DSPs inferred at the current stage of the synthesis flow. Some DSP may be reimplemented as non DSP primitives later in the synthesis flow. Multiple instantiated DSPs are reported only once.
 ---------------------------------------------------------------------------------
@@ -534,14 +617,15 @@ Finished ROM, RAM, DSP, Shift Register and Retiming Reporting
 ---------------------------------------------------------------------------------
 Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
+WARNING: [Synth 8-565] redefining clock 'clk100M'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1640.523 ; gain = 927.867
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 1691.715 ; gain = 926.434
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:00:50 ; elapsed = 00:00:52 . Memory (MB): peak = 1641.266 ; gain = 928.609
+Finished Timing Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 1692.977 ; gain = 927.695
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -568,7 +652,7 @@ INFO: [Synth 8-7052] The timing for the instance line_buffer_0/bram_line_1/mem_r
 INFO: [Synth 8-7052] The timing for the instance line_buffer_0/bram_line_2/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance line_buffer_0/bram_line_3/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:00:51 ; elapsed = 00:00:53 . Memory (MB): peak = 1652.496 ; gain = 939.840
+Finished Technology Mapping : Time (s): cpu = 00:01:19 ; elapsed = 00:01:26 . Memory (MB): peak = 1705.270 ; gain = 939.988
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -586,37 +670,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1898.742 ; gain = 1186.086
+Finished IO Insertion : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1949.984 ; gain = 1184.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1898.742 ; gain = 1186.086
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1949.984 ; gain = 1184.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1898.742 ; gain = 1186.086
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1949.984 ; gain = 1184.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1898.742 ; gain = 1186.086
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1949.984 ; gain = 1184.703
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1901.727 ; gain = 1189.070
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1952.961 ; gain = 1187.680
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1901.727 ; gain = 1189.070
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1952.961 ; gain = 1187.680
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -657,96 +741,121 @@ DSP Final Report (the ' indicates corresponding REG is set)
 +----------------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 |hdmi_top              | PCIN+A:B+C        | 30     | 18     | -      | -      | 0      | 0    | 0    | -    | -    | -     | 0    | 0    | 
 |hdmi_top              | PCIN+A:B+C        | 30     | 18     | -      | -      | 48     | 0    | 0    | -    | -    | -     | 0    | 0    | 
-|hdmi_top              | ((A'*B)')'        | 8      | 0      | -      | -      | 0      | 1    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | ((A'*B)')'        | 8      | 0      | -      | -      | 0      | 1    | 0    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | ((A'*B')')'       | 8      | 18     | -      | -      | 0      | 1    | 1    | -    | -    | -     | 1    | 1    | 
 |dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 48     | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | ((A'*B)')'        | 8      | 0      | -      | -      | 0      | 1    | 0    | -    | -    | -     | 1    | 1    | 
 |dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 12     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
 |dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 48     | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | ((A'*B)')'        | 8      | 0      | -      | -      | 0      | 1    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|dsp_25x18_passthrough | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 8      | 0      | -      | -      | 48     | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | ((A'*B)')'        | 8      | 0      | -      | -      | 0      | 1    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 0      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 0      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 0      | 0      | -      | -      | 0      | 2    | 0    | -    | -    | -     | 1    | 1    | 
-|hdmi_top              | (PCIN+(A''*B)')'  | 0      | 0      | -      | -      | 48     | 2    | 0    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | ((A'*B')')'       | 8      | 18     | -      | -      | 0      | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | ((A'*B')')'       | 8      | 18     | -      | -      | 0      | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | ((A'*B')')'       | 8      | 18     | -      | -      | 0      | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 8      | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | ((A'*B')')'       | 8      | 18     | -      | -      | 0      | 1    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 0      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 0      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 0      | 18     | -      | -      | 0      | 2    | 1    | -    | -    | -     | 1    | 1    | 
+|dsp_25x18_passthrough | (PCIN+(A''*B')')' | 0      | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
 |dsp                   | (C'+(A'*B'')')'   | 30     | 15     | 25     | -      | 0      | 1    | 2    | 1    | -    | -     | 1    | 1    | 
 |dsp                   | (PCIN+(A''*B')')' | 14     | 18     | -      | -      | 48     | 2    | 1    | -    | -    | -     | 1    | 1    | 
 +----------------------+-------------------+--------+--------+--------+--------+--------+------+------+------+------+-------+------+------+
 
 
 Report BlackBoxes: 
-+------+--------------+----------+
-|      |BlackBox name |Instances |
-+------+--------------+----------+
-|1     |hdmi_rx       |         1|
-|2     |hdmi_tx       |         1|
-+------+--------------+----------+
++------+------------------------------------------------+----------+
+|      |BlackBox name                                   |Instances |
++------+------------------------------------------------+----------+
+|1     |hdmi_rx                                         |         1|
+|2     |hdmi_tx                                         |         1|
+|3     |cpu_hdmi_system_axi_uartlite_0_0                |         1|
+|4     |cpu_hdmi_system_clk_wiz_1_0                     |         1|
+|5     |cpu_hdmi_system_fir_coeff_bank_axi_0_2          |         1|
+|6     |cpu_hdmi_system_mdm_1_0                         |         1|
+|7     |cpu_hdmi_system_microblaze_riscv_0_0            |         1|
+|8     |cpu_hdmi_system_microblaze_riscv_0_axi_periph_0 |         1|
+|9     |cpu_hdmi_system_rst_clk_wiz_1_100M_0            |         1|
+|10    |cpu_hdmi_system_dlmb_bram_if_cntlr_0            |         1|
+|11    |cpu_hdmi_system_dlmb_v10_0                      |         1|
+|12    |cpu_hdmi_system_ilmb_bram_if_cntlr_0            |         1|
+|13    |cpu_hdmi_system_ilmb_v10_0                      |         1|
+|14    |cpu_hdmi_system_lmb_bram_0                      |         1|
++------+------------------------------------------------+----------+
 
 Report Cell Usage: 
-+------+-----------+------+
-|      |Cell       |Count |
-+------+-----------+------+
-|1     |hdmi_rx    |     1|
-|2     |hdmi_tx    |     1|
-|3     |BUFG       |     1|
-|4     |CARRY4     |     6|
-|5     |DSP48E1    |    29|
-|11    |LUT1       |     1|
-|12    |LUT2       |    36|
-|13    |LUT3       |    15|
-|14    |LUT4       |     7|
-|15    |LUT5       |     4|
-|16    |LUT6       |    12|
-|17    |PLLE2_BASE |     1|
-|18    |RAMB18E1   |     4|
-|19    |SRL16E     |    16|
-|20    |FDRE       |   391|
-|21    |IBUF       |    12|
-|22    |OBUF       |    17|
-+------+-----------+------+
++------+----------------------------------------------+------+
+|      |Cell                                          |Count |
++------+----------------------------------------------+------+
+|1     |cpu_hdmi_system_axi_uartlite_0                |     1|
+|2     |cpu_hdmi_system_clk_wiz_1                     |     1|
+|3     |cpu_hdmi_system_dlmb_bram_if_cntlr            |     1|
+|4     |cpu_hdmi_system_dlmb_v10                      |     1|
+|5     |cpu_hdmi_system_fir_coeff_bank_axi_0          |     1|
+|6     |cpu_hdmi_system_ilmb_bram_if_cntlr            |     1|
+|7     |cpu_hdmi_system_ilmb_v10                      |     1|
+|8     |cpu_hdmi_system_lmb_bram                      |     1|
+|9     |cpu_hdmi_system_mdm_1                         |     1|
+|10    |cpu_hdmi_system_microblaze_riscv_0            |     1|
+|11    |cpu_hdmi_system_microblaze_riscv_0_axi_periph |     1|
+|12    |cpu_hdmi_system_rst_clk_wiz_1_100M            |     1|
+|13    |hdmi_rx                                       |     1|
+|14    |hdmi_tx                                       |     1|
+|15    |BUFG                                          |     1|
+|16    |CARRY4                                        |     6|
+|17    |DSP48E1                                       |    29|
+|22    |LUT1                                          |     1|
+|23    |LUT2                                          |    36|
+|24    |LUT3                                          |    15|
+|25    |LUT4                                          |     7|
+|26    |LUT5                                          |     4|
+|27    |LUT6                                          |    12|
+|28    |PLLE2_BASE                                    |     1|
+|29    |RAMB18E1                                      |     4|
+|30    |SRL16E                                        |    16|
+|31    |FDRE                                          |   391|
+|32    |IBUF                                          |    12|
+|33    |OBUF                                          |    18|
++------+----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1901.727 ; gain = 1189.070
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1952.961 ; gain = 1187.680
 ---------------------------------------------------------------------------------
-Synthesis finished with 0 errors, 0 critical warnings and 18 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:00:40 ; elapsed = 00:00:56 . Memory (MB): peak = 1901.727 ; gain = 1106.188
-Synthesis Optimization Complete : Time (s): cpu = 00:00:59 ; elapsed = 00:01:01 . Memory (MB): peak = 1901.727 ; gain = 1189.070
+Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
+Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1952.961 ; gain = 1122.844
+Synthesis Optimization Complete : Time (s): cpu = 00:01:33 ; elapsed = 00:01:41 . Memory (MB): peak = 1952.961 ; gain = 1187.680
 INFO: [Project 1-571] Translating synthesized netlist
 Parsing EDIF File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.edn]
 Finished Parsing EDIF File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.edn]
 Parsing EDIF File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_tx.edn]
 Finished Parsing EDIF File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_tx.edn]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.082 . Memory (MB): peak = 1916.500 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.176 . Memory (MB): peak = 1967.707 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 94 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2018.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
+INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1924.172 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1975.363 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 8 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
   PLLE2_BASE => PLLE2_ADV: 1 instance 
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
 
-Synth Design complete | Checksum: 2d90fd7f
+Synth Design complete | Checksum: 46897b1b
 INFO: [Common 17-83] Releasing license: Synthesis
-55 Infos, 36 Warnings, 0 Critical Warnings and 0 Errors encountered.
+89 Infos, 60 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:07 ; elapsed = 00:01:14 . Memory (MB): peak = 1924.172 ; gain = 1392.992
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1924.172 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:02:00 . Memory (MB): peak = 1975.363 ; gain = 1392.656
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1975.363 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/hdmi_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file hdmi_top_utilization_synth.rpt -pb hdmi_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Sat Jun  6 16:30:27 2026...
+INFO: [Common 17-206] Exiting Vivado at Mon Jun  8 16:27:31 2026...

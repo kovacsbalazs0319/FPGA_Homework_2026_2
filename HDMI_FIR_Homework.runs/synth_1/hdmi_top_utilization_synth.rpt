@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Sat Jun  6 16:30:27 2026
+| Date         : Mon Jun  8 16:27:31 2026
 | Host         : DESKTOP-H73H9I1 running 64-bit major release  (build 9200)
 | Command      : report_utilization -file hdmi_top_utilization_synth.rpt -pb hdmi_top_utilization_synth.pb
 | Design       : hdmi_top
@@ -99,7 +99,7 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 +-----------------------------+------+-------+------------+-----------+-------+
 |          Site Type          | Used | Fixed | Prohibited | Available | Util% |
 +-----------------------------+------+-------+------------+-----------+-------+
-| Bonded IOB                  |   30 |     0 |          0 |       300 | 10.00 |
+| Bonded IOB                  |   32 |     0 |          0 |       300 | 10.67 |
 | Bonded IPADs                |    0 |     0 |          0 |        26 |  0.00 |
 | Bonded OPADs                |    0 |     0 |          0 |        16 |  0.00 |
 | PHY_CONTROL                 |    0 |     0 |          0 |         6 |  0.00 |
@@ -176,13 +176,13 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 | CARRY4     |   24 |          CarryLogic |
 | SRL16E     |   16 |  Distributed Memory |
 | RAMS32     |   12 |  Distributed Memory |
-| OBUF       |    9 |                  IO |
+| OBUF       |   10 |                  IO |
 | MUXF7      |    8 |               MuxFx |
 | RAMB18E1   |    6 |        Block Memory |
 | OSERDESE2  |    6 |                  IO |
 | ISERDESE2  |    6 |                  IO |
+| IBUF       |    6 |                  IO |
 | LUT1       |    5 |                 LUT |
-| IBUF       |    5 |                  IO |
 | OBUFDS     |    4 |                  IO |
 | IBUFDS     |    4 |                  IO |
 | IDELAYE2   |    3 |                  IO |
@@ -199,9 +199,22 @@ Warning! For any ECO changes, please run place_design if there are unplaced inst
 8. Black Boxes
 --------------
 
-+----------+------+
-| Ref Name | Used |
-+----------+------+
++-------------------------------------------------+------+
+|                     Ref Name                    | Used |
++-------------------------------------------------+------+
+| cpu_hdmi_system_rst_clk_wiz_1_100M_0            |    1 |
+| cpu_hdmi_system_microblaze_riscv_0_axi_periph_0 |    1 |
+| cpu_hdmi_system_microblaze_riscv_0_0            |    1 |
+| cpu_hdmi_system_mdm_1_0                         |    1 |
+| cpu_hdmi_system_lmb_bram_0                      |    1 |
+| cpu_hdmi_system_ilmb_v10_0                      |    1 |
+| cpu_hdmi_system_ilmb_bram_if_cntlr_0            |    1 |
+| cpu_hdmi_system_fir_coeff_bank_axi_0_2          |    1 |
+| cpu_hdmi_system_dlmb_v10_0                      |    1 |
+| cpu_hdmi_system_dlmb_bram_if_cntlr_0            |    1 |
+| cpu_hdmi_system_clk_wiz_1_0                     |    1 |
+| cpu_hdmi_system_axi_uartlite_0_0                |    1 |
++-------------------------------------------------+------+
 
 
 9. Instantiated Netlists

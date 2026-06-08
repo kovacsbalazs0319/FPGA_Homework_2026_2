@@ -3,8 +3,8 @@
 # SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
 # IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
 # SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-# Start of session at: Sat Jun  6 16:28:53 2026
-# Process ID         : 20456
+# Start of session at: Mon Jun  8 16:24:55 2026
+# Process ID         : 17448
 # Current directory  : C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1
 # Command line       : vivado.exe -log hdmi_top.vds -product Vivado -mode batch -messageDb vivado.pb -notrace -source hdmi_top.tcl
 # Log file           : C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/hdmi_top.vds
@@ -19,6 +19,6 @@
 # Host memory        : 16541 MB
 # Swap memory        : 5637 MB
 # Total Virtual      : 22178 MB
-# Available Virtual  : 4993 MB
+# Available Virtual  : 3329 MB
 #-----------------------------------------------------------
 source hdmi_top.tcl -notrace

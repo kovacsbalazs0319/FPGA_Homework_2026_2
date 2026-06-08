@@ -58,21 +58,26 @@ if {$::dispatch::connected} {
 OPTRACE "synth_1" START { ROLLUP_AUTO }
 set_param general.usePosixSpawnForFork 1
 set_param chipscope.maxJobs 4
-set_param xicom.use_bs_reader 1
+set_param bd.open.in_stealth_mode 1
 OPTRACE "Creating in-memory project" START { }
 create_project -in_memory -part xc7k70tfbg676-1
 
 set_param project.singleFileAddWarning.threshold 0
 set_param project.compositeFile.enableAutoGeneration 0
 set_param synth.vivado.isSynthRun true
+set_msg_config -source 4 -id {IP_Flow 19-2162} -severity warning -new_severity info
 set_property webtalk.parent_dir C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.cache/wt [current_project]
 set_property parent.project_path C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.xpr [current_project]
+set_property XPM_LIBRARIES {XPM_CDC XPM_FIFO XPM_MEMORY} [current_project]
 set_property default_lib xil_defaultlib [current_project]
 set_property target_language Verilog [current_project]
+set_property ip_repo_paths c:/Users/Balazs/Desktop/MSC1/FPGA/homework/ip_repo/fir_coeff_bank_axi_1_0 [current_project]
+update_ip_catalog
 set_property ip_output_repo c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.cache/ip [current_project]
 set_property ip_cache_permissions {read write} [current_project]
 OPTRACE "Creating in-memory project" END { }
 OPTRACE "Adding files" START { }
+read_verilog -library xil_defaultlib -sv C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/cpu_hdmi_system_sv.sv
 read_verilog -library xil_defaultlib {
   C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v
   C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v
@@ -82,6 +87,63 @@ read_verilog -library xil_defaultlib {
   C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/rgb2y.v
   C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_top.v
 }
+add_files C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/bd/cpu_hdmi_system/cpu_hdmi_system.bd
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_0/cpu_hdmi_system_microblaze_riscv_0_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_0/cpu_hdmi_system_microblaze_riscv_0_0_ooc_debug.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_0/cpu_hdmi_system_microblaze_riscv_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_dlmb_v10_0/cpu_hdmi_system_dlmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_ilmb_v10_0/cpu_hdmi_system_ilmb_v10_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_dlmb_bram_if_cntlr_0/cpu_hdmi_system_dlmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_ilmb_bram_if_cntlr_0/cpu_hdmi_system_ilmb_bram_if_cntlr_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_lmb_bram_0/cpu_hdmi_system_lmb_bram_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_1/bd_af15_psr_aclk_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_2/bd_af15_arinsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_3/bd_af15_rinsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_4/bd_af15_awinsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_5/bd_af15_winsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_6/bd_af15_binsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_7/bd_af15_aroutsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_8/bd_af15_routsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_9/bd_af15_awoutsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_10/bd_af15_woutsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_11/bd_af15_boutsw_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_12/bd_af15_arni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_13/bd_af15_rni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_14/bd_af15_awni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_15/bd_af15_wni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_16/bd_af15_bni_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_20/bd_af15_s00a2s_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_21/bd_af15_sarn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_22/bd_af15_srn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_23/bd_af15_sawn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_24/bd_af15_swn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_25/bd_af15_sbn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_26/bd_af15_m00s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_27/bd_af15_m00arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_28/bd_af15_m00rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_29/bd_af15_m00awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_30/bd_af15_m00wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_31/bd_af15_m00bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_33/bd_af15_m01s2a_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_34/bd_af15_m01arn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_35/bd_af15_m01rn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_36/bd_af15_m01awn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_37/bd_af15_m01wn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/bd_0/ip/ip_38/bd_af15_m01bn_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0/smartconnect.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_mdm_1_0/cpu_hdmi_system_mdm_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_mdm_1_0/cpu_hdmi_system_mdm_1_0_ooc_trace.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_clk_wiz_1_0/cpu_hdmi_system_clk_wiz_1_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_clk_wiz_1_0/cpu_hdmi_system_clk_wiz_1_0.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_clk_wiz_1_0/cpu_hdmi_system_clk_wiz_1_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_rst_clk_wiz_1_100M_0/cpu_hdmi_system_rst_clk_wiz_1_100M_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_rst_clk_wiz_1_100M_0/cpu_hdmi_system_rst_clk_wiz_1_100M_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_axi_uartlite_0_0/cpu_hdmi_system_axi_uartlite_0_0_board.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_axi_uartlite_0_0/cpu_hdmi_system_axi_uartlite_0_0_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/cpu_hdmi_system_ooc.xdc]
+set_property used_in_implementation false [get_files -all c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_microblaze_riscv_0_0/data/riscv_bootloop.elf]
+
 read_edif C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_tx.edn
 read_edif C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.edn
 OPTRACE "Adding files" END { }
@@ -99,6 +161,8 @@ set_property used_in_implementation false [get_files C:/Users/Balazs/Desktop/MSC
 read_xdc C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc
 set_property used_in_implementation false [get_files C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc]
 
+read_xdc dont_touch.xdc
+set_property used_in_implementation false [get_files dont_touch.xdc]
 set_param ips.enableIPCacheLiteLoad 1
 
 read_checkpoint -auto_incremental -incremental C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/utils_1/imports/synth_1/hdmi_top.dcp
