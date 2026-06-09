@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 -------------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version     : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date             : Mon Jun  8 16:33:39 2026
+| Date             : Tue Jun  9 16:00:56 2026
 | Host             : DESKTOP-H73H9I1 running 64-bit major release  (build 9200)
 | Command          : report_power -file hdmi_top_power_routed.rpt -pb hdmi_top_power_summary_routed.pb -rpx hdmi_top_power_routed.rpx
 | Design           : hdmi_top
@@ -30,10 +30,10 @@ Table of Contents
 ----------
 
 +--------------------------+--------------+
-| Total On-Chip Power (W)  | 0.633        |
+| Total On-Chip Power (W)  | 0.630        |
 | Design Power Budget (W)  | Unspecified* |
 | Power Budget Margin (W)  | NA           |
-| Dynamic (W)              | 0.548        |
+| Dynamic (W)              | 0.545        |
 | Device Static (W)        | 0.085        |
 | Effective TJA (C/W)      | 1.9          |
 | Max Ambient (C)          | 83.8         |
@@ -52,23 +52,23 @@ Table of Contents
 +--------------------------+-----------+----------+-----------+-----------------+
 | On-Chip                  | Power (W) | Used     | Available | Utilization (%) |
 +--------------------------+-----------+----------+-----------+-----------------+
-| Clocks                   |     0.024 |       15 |       --- |             --- |
-| Slice Logic              |     0.006 |     9173 |       --- |             --- |
-|   LUT as Logic           |     0.005 |     3424 |     41000 |            8.35 |
-|   Register               |    <0.001 |     3867 |     82000 |            4.72 |
+| Clocks                   |     0.024 |       14 |       --- |             --- |
+| Slice Logic              |     0.005 |     9179 |       --- |             --- |
+|   LUT as Logic           |     0.004 |     3422 |     41000 |            8.35 |
+|   Register               |    <0.001 |     3875 |     82000 |            4.73 |
 |   LUT as Distributed RAM |    <0.001 |       88 |     13400 |            0.66 |
 |   CARRY4                 |    <0.001 |       96 |     10250 |            0.94 |
 |   F7/F8 Muxes            |    <0.001 |      135 |     41000 |            0.33 |
 |   LUT as Shift Register  |    <0.001 |       54 |     13400 |            0.40 |
 |   Others                 |    <0.001 |      629 |       --- |             --- |
-| Signals                  |     0.012 |     8484 |       --- |             --- |
+| Signals                  |     0.010 |     8476 |       --- |             --- |
 | Block RAM                |     0.009 |       19 |       135 |           14.07 |
 | MMCM                     |     0.213 |        2 |         6 |           33.33 |
 | PLL                      |     0.109 |        1 |         6 |           16.67 |
 | DSPs                     |     0.002 |       29 |       240 |           12.08 |
 | I/O                      |     0.173 |       31 |       300 |           10.33 |
 | Static Power             |     0.085 |          |           |                 |
-| Total                    |     0.633 |          |           |                 |
+| Total                    |     0.630 |          |           |                 |
 +--------------------------+-----------+----------+-----------+-----------------+
 
 
@@ -78,7 +78,7 @@ Table of Contents
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
 | Source    | Voltage (V) | Total (A) | Dynamic (A) | Static (A) | Powerup (A) | Budget (A)  | Margin (A) |
 +-----------+-------------+-----------+-------------+------------+-------------+-------------+------------+
-| Vccint    |       1.000 |     0.092 |       0.069 |      0.023 |       NA    | Unspecified | NA         |
+| Vccint    |       1.000 |     0.089 |       0.066 |      0.023 |       NA    | Unspecified | NA         |
 | Vccaux    |       1.800 |     0.204 |       0.192 |      0.012 |       NA    | Unspecified | NA         |
 | Vcco33    |       3.300 |     0.041 |       0.040 |      0.001 |       NA    | Unspecified | NA         |
 | Vcco25    |       2.500 |     0.000 |       0.000 |      0.000 |       NA    | Unspecified | NA         |
@@ -136,7 +136,6 @@ Table of Contents
 | Clock                                                                                                    | Domain                                                                                                   | Constraint (ns) |
 +----------------------------------------------------------------------------------------------------------+----------------------------------------------------------------------------------------------------------+-----------------+
 | clk100M                                                                                                  | clk100M                                                                                                  |            10.0 |
-| clk100M                                                                                                  | clk100M_IBUF                                                                                             |            10.0 |
 | clk200M                                                                                                  | clk200M                                                                                                  |             5.0 |
 | clk_out1_cpu_hdmi_system_clk_wiz_1_0                                                                     | processor_inst/inst/clk_wiz_1/inst/clk_out1_cpu_hdmi_system_clk_wiz_1_0                                  |            10.0 |
 | clkfbout_cpu_hdmi_system_clk_wiz_1_0                                                                     | processor_inst/inst/clk_wiz_1/inst/clkfbout_cpu_hdmi_system_clk_wiz_1_0                                  |            10.0 |
@@ -160,14 +159,13 @@ Table of Contents
 +-------------------------------------+-----------+
 | Name                                | Power (W) |
 +-------------------------------------+-----------+
-| hdmi_top                            |     0.548 |
-|   fir_0                             |     0.007 |
+| hdmi_top                            |     0.545 |
+|   fir_0                             |     0.006 |
 |     row_1                           |     0.001 |
 |     row_2                           |     0.002 |
-|     row_3                           |     0.001 |
-|   hdmi_rx_0                         |     0.155 |
+|   hdmi_rx_0                         |     0.154 |
 |     edid_rom                        |     0.002 |
-|     tmds_receiver                   |     0.041 |
+|     tmds_receiver                   |     0.040 |
 |       decoder_b                     |     0.014 |
 |       decoder_g                     |     0.013 |
 |       decoder_r                     |     0.013 |

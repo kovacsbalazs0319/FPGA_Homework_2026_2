@@ -1,7 +1,7 @@
 Copyright 1986-2022 Xilinx, Inc. All Rights Reserved. Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 ---------------------------------------------------------------------------------------------------------------------------------------------
 | Tool Version : Vivado v.2025.2 (win64) Build 6299465 Fri Nov 14 19:35:11 GMT 2025
-| Date         : Mon Jun  8 16:33:15 2026
+| Date         : Tue Jun  9 16:00:38 2026
 | Host         : DESKTOP-H73H9I1 running 64-bit major release  (build 9200)
 | Command      : report_drc -file hdmi_top_drc_routed.rpt -pb hdmi_top_drc_routed.pb -rpx hdmi_top_drc_routed.rpx
 | Design       : hdmi_top
@@ -69,37 +69,37 @@ Related violations: <none>
 
 DPIP-1#1 Warning
 Input pipelining  
-DSP fir_0/fir_out_o input fir_0/fir_out_o/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP fir_0/row_sum_total input fir_0/row_sum_total/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#2 Warning
 Input pipelining  
-DSP fir_0/fir_out_o input fir_0/fir_out_o/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP fir_0/row_sum_total input fir_0/row_sum_total/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#3 Warning
 Input pipelining  
-DSP fir_0/fir_out_o input fir_0/fir_out_o/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP fir_0/row_sum_total input fir_0/row_sum_total/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#4 Warning
 Input pipelining  
-DSP fir_0/fir_out_o__0 input fir_0/fir_out_o__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP fir_0/row_sum_total__0 input fir_0/row_sum_total__0/A[29:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#5 Warning
 Input pipelining  
-DSP fir_0/fir_out_o__0 input fir_0/fir_out_o__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP fir_0/row_sum_total__0 input fir_0/row_sum_total__0/B[17:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPIP-1#6 Warning
 Input pipelining  
-DSP fir_0/fir_out_o__0 input fir_0/fir_out_o__0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
+DSP fir_0/row_sum_total__0 input fir_0/row_sum_total__0/C[47:0] is not pipelined. Pipelining DSP48 input will improve performance.
 Related violations: <none>
 
 DPOP-1#1 Warning
 PREG Output pipelining  
-DSP fir_0/fir_out_o__0 output fir_0/fir_out_o__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
+DSP fir_0/row_sum_total__0 output fir_0/row_sum_total__0/P[47:0] is not pipelined (PREG=0). Pipelining the DSP48 output will improve performance and often saves power so it is suggested whenever possible to fully pipeline this function.  If this DSP48 function was inferred, it is suggested to describe an additional register stage after this function.  If the DSP48 was instantiated in the design, it is suggested to set the PREG attribute to 1.
 Related violations: <none>
 
 REQP-107#1 Warning
@@ -134,20 +134,20 @@ Related violations: <none>
 
 RTSTAT-10#1 Warning
 No routable loads  
-15 net(s) have no routable loads. The problem bus(es) and/or net(s) are processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m00_nodes/m00_r_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_b_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_w_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/s00_nodes/s00_aw_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_ar_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_aw_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/s00_nodes/s00_ar_node/inst/mi_handler_m_sc_areset_pipe,
+15 net(s) have no routable loads. The problem bus(es) and/or net(s) are processor_inst/inst/microblaze_riscv_0_axi_periph/inst/s00_nodes/s00_aw_node/inst/mi_handler_m_sc_areset_pipe,
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m00_nodes/m00_r_node/inst/mi_handler_m_sc_areset_pipe,
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/s00_nodes/s00_w_node/inst/mi_handler_m_sc_areset_pipe,
 processor_inst/inst/microblaze_riscv_0_axi_periph/inst/s00_nodes/s00_b_node/inst/mi_handler_m_sc_areset_pipe,
 processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m00_nodes/m00_ar_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m00_nodes/m00_aw_node/inst/mi_handler_m_sc_areset_pipe,
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_r_node/inst/mi_handler_m_sc_areset_pipe,
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/s00_nodes/s00_ar_node/inst/mi_handler_m_sc_areset_pipe,
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/s00_nodes/s00_r_node/inst/mi_handler_m_sc_areset_pipe,
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_aw_node/inst/mi_handler_m_sc_areset_pipe,
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_b_node/inst/mi_handler_m_sc_areset_pipe,
 processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m00_nodes/m00_b_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m00_nodes/m00_w_node/inst/mi_handler_m_sc_areset_pipe,
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_r_node/inst/mi_handler_m_sc_areset_pipe
-processor_inst/inst/microblaze_riscv_0_axi_periph/inst/s00_nodes/s00_r_node/inst/mi_handler_m_sc_areset_pipe.
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m01_nodes/m01_ar_node/inst/mi_handler_m_sc_areset_pipe,
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m00_nodes/m00_aw_node/inst/mi_handler_m_sc_areset_pipe
+processor_inst/inst/microblaze_riscv_0_axi_periph/inst/m00_nodes/m00_w_node/inst/mi_handler_m_sc_areset_pipe.
 Related violations: <none>
 
 

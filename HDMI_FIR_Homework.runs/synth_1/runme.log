@@ -8,16 +8,16 @@
   **** SW Build 6299465 on Fri Nov 14 19:35:11 GMT 2025
   **** IP Build 6300035 on Fri Nov 14 10:48:45 MST 2025
   **** SharedData Build 6298862 on Thu Nov 13 04:50:51 MST 2025
-  **** Start of session at: Mon Jun  8 16:24:55 2026
+  **** Start of session at: Tue Jun  9 15:54:21 2026
     ** Copyright 1986-2022 Xilinx, Inc. All Rights Reserved.
     ** Copyright 2022-2025 Advanced Micro Devices, Inc. All Rights Reserved.
 
 source hdmi_top.tcl -notrace
-create_project: Time (s): cpu = 00:00:16 ; elapsed = 00:00:13 . Memory (MB): peak = 523.777 ; gain = 218.102
+create_project: Time (s): cpu = 00:00:24 ; elapsed = 00:00:18 . Memory (MB): peak = 526.754 ; gain = 222.508
 INFO: [IP_Flow 19-234] Refreshing IP repositories
 INFO: [IP_Flow 19-1700] Loaded user IP repository 'c:/Users/Balazs/Desktop/MSC1/FPGA/homework/ip_repo/fir_coeff_bank_axi_1_0'.
 INFO: [IP_Flow 19-2313] Loaded Vivado IP repository 'C:/AMDDesignTools/2025.2/Vivado/data/ip'.
-add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:12 . Memory (MB): peak = 562.754 ; gain = 34.016
+add_files: Time (s): cpu = 00:00:10 ; elapsed = 00:00:10 . Memory (MB): peak = 564.027 ; gain = 32.328
 Command: read_checkpoint -auto_incremental -incremental C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/utils_1/imports/synth_1/hdmi_top.dcp
 INFO: [Vivado 12-5825] Read reference checkpoint from C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/utils_1/imports/synth_1/hdmi_top.dcp for incremental synthesis
 INFO: [Vivado 12-7989] Please ensure there are no constraint changes
@@ -30,9 +30,9 @@ INFO: [Designutils 20-5440] No compile time benefit to using incremental synthes
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 INFO: [Synth 8-7079] Multithreading enabled for synth_design using a maximum of 2 processes.
 INFO: [Synth 8-7078] Launching helper process for spawning children vivado processes
-INFO: [Synth 8-7075] Helper process launched with PID 4000
+INFO: [Synth 8-7075] Helper process launched with PID 28876
 ---------------------------------------------------------------------------------
-Starting RTL Elaboration : Time (s): cpu = 00:00:15 ; elapsed = 00:00:16 . Memory (MB): peak = 1307.008 ; gain = 541.727
+Starting RTL Elaboration : Time (s): cpu = 00:00:12 ; elapsed = 00:00:13 . Memory (MB): peak = 1306.062 ; gain = 543.082
 ---------------------------------------------------------------------------------
 INFO: [Synth 8-6157] synthesizing module 'hdmi_top' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_top.v:23]
 INFO: [Synth 8-6157] synthesizing module 'PLLE2_BASE' [C:/AMDDesignTools/2025.2/Vivado/scripts/rt/data/unisim_comp.v:133986]
@@ -68,48 +68,48 @@ INFO: [Synth 8-6157] synthesizing module 'hdmi_rx' [C:/Users/Balazs/Desktop/MSC1
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_rx' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.v:1]
 INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_sv' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/cpu_hdmi_system_sv.sv:55]
 INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:13]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_axi_uartlite_0_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_axi_uartlite_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_axi_uartlite_0_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_axi_uartlite_0_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_axi_uartlite_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_axi_uartlite_0_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_axi_uartlite_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'interrupt' of module 'cpu_hdmi_system_axi_uartlite_0_0' is unconnected for instance 'axi_uartlite_0' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:121]
 WARNING: [Synth 8-7023] instance 'axi_uartlite_0' of module 'cpu_hdmi_system_axi_uartlite_0_0' has 22 connections declared, but only 21 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:121]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_clk_wiz_1_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_clk_wiz_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_clk_wiz_1_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_clk_wiz_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_fir_coeff_bank_axi_0_2' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_fir_coeff_bank_axi_0_2_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_fir_coeff_bank_axi_0_2' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_fir_coeff_bank_axi_0_2_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_mdm_1_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_mdm_1_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_mdm_1_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_clk_wiz_1_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_clk_wiz_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_clk_wiz_1_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_clk_wiz_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_fir_coeff_bank_axi_0_2' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_fir_coeff_bank_axi_0_2_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_fir_coeff_bank_axi_0_2' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_fir_coeff_bank_axi_0_2_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_mdm_1_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_mdm_1_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_mdm_1_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'Interrupt_Ack' of module 'cpu_hdmi_system_microblaze_riscv_0_0' is unconnected for instance 'microblaze_riscv_0' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:184]
 WARNING: [Synth 8-7071] port 'Dbg_Trig_In' of module 'cpu_hdmi_system_microblaze_riscv_0_0' is unconnected for instance 'microblaze_riscv_0' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:184]
 WARNING: [Synth 8-7071] port 'Dbg_Trig_Ack_Out' of module 'cpu_hdmi_system_microblaze_riscv_0_0' is unconnected for instance 'microblaze_riscv_0' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:184]
 WARNING: [Synth 8-7023] instance 'microblaze_riscv_0' of module 'cpu_hdmi_system_microblaze_riscv_0_0' has 56 connections declared, but only 53 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:184]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_microblaze_riscv_0_axi_periph_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'M00_AXI_awprot' of module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' is unconnected for instance 'microblaze_riscv_0_axi_periph' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:238]
 WARNING: [Synth 8-7071] port 'M00_AXI_arprot' of module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' is unconnected for instance 'microblaze_riscv_0_axi_periph' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:238]
 WARNING: [Synth 8-7023] instance 'microblaze_riscv_0_axi_periph' of module 'cpu_hdmi_system_microblaze_riscv_0_axi_periph_0' has 59 connections declared, but only 57 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:238]
 INFO: [Synth 8-6157] synthesizing module 'microblaze_riscv_0_local_memory_imp_1FKUDYT' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:329]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_dlmb_bram_if_cntlr_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_dlmb_bram_if_cntlr_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_dlmb_v10_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_dlmb_v10_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_dlmb_bram_if_cntlr_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_dlmb_bram_if_cntlr_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_dlmb_v10_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_dlmb_v10_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_dlmb_v10_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'cpu_hdmi_system_dlmb_v10_0' is unconnected for instance 'dlmb_v10' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:454]
 WARNING: [Synth 8-7023] instance 'dlmb_v10' of module 'cpu_hdmi_system_dlmb_v10_0' has 25 connections declared, but only 24 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:454]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_ilmb_bram_if_cntlr_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_ilmb_bram_if_cntlr_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_bram_if_cntlr_0_stub.v:6]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_ilmb_v10_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_v10_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_ilmb_v10_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_ilmb_bram_if_cntlr_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_ilmb_bram_if_cntlr_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_bram_if_cntlr_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_ilmb_v10_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_v10_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_ilmb_v10_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_ilmb_v10_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'LMB_Rst' of module 'cpu_hdmi_system_ilmb_v10_0' is unconnected for instance 'ilmb_v10' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:500]
 WARNING: [Synth 8-7023] instance 'ilmb_v10' of module 'cpu_hdmi_system_ilmb_v10_0' has 25 connections declared, but only 24 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:500]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_lmb_bram_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_lmb_bram_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_lmb_bram_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_lmb_bram_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_lmb_bram_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_lmb_bram_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_lmb_bram_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'rsta_busy' of module 'cpu_hdmi_system_lmb_bram_0' is unconnected for instance 'lmb_bram' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:525]
 WARNING: [Synth 8-7071] port 'rstb_busy' of module 'cpu_hdmi_system_lmb_bram_0' is unconnected for instance 'lmb_bram' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:525]
 WARNING: [Synth 8-7023] instance 'lmb_bram' of module 'cpu_hdmi_system_lmb_bram_0' has 16 connections declared, but only 14 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:525]
 INFO: [Synth 8-6155] done synthesizing module 'microblaze_riscv_0_local_memory_imp_1FKUDYT' (0#1) [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:329]
-INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_rst_clk_wiz_1_100M_0_stub.v:6]
-INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-17448-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6157] synthesizing module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_rst_clk_wiz_1_100M_0_stub.v:6]
+INFO: [Synth 8-6155] done synthesizing module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/.Xil/Vivado-11796-DESKTOP-H73H9I1/realtime/cpu_hdmi_system_rst_clk_wiz_1_100M_0_stub.v:6]
 WARNING: [Synth 8-7071] port 'peripheral_reset' of module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:318]
 WARNING: [Synth 8-7071] port 'interconnect_aresetn' of module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' is unconnected for instance 'rst_clk_wiz_1_100M' [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:318]
 WARNING: [Synth 8-7023] instance 'rst_clk_wiz_1_100M' of module 'cpu_hdmi_system_rst_clk_wiz_1_100M_0' has 10 connections declared, but only 8 given [c:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/synth/cpu_hdmi_system.v:318]
@@ -119,33 +119,33 @@ INFO: [Synth 8-6157] synthesizing module 'rgb2y' [C:/Users/Balazs/Desktop/MSC1/F
 INFO: [Synth 8-6157] synthesizing module 'dsp' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/dsp.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'dsp' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/dsp.v:23]
 INFO: [Synth 8-6155] done synthesizing module 'rgb2y' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/rgb2y.v:1]
-INFO: [Synth 8-6157] synthesizing module 'bram_line_buffer' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:79]
+INFO: [Synth 8-6157] synthesizing module 'bram_line_buffer' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:71]
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
 	Parameter LINE_WIDTH bound to: 2048 - type: integer 
 	Parameter ADDR_WIDTH bound to: 11 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'bram_line_buffer_ram' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:34]
+INFO: [Synth 8-6157] synthesizing module 'bram_line_buffer_ram' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:27]
 	Parameter DATA_WIDTH bound to: 8 - type: integer 
 	Parameter LINE_WIDTH bound to: 2048 - type: integer 
 	Parameter ADDR_WIDTH bound to: 11 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'bram_line_buffer_ram' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:34]
-INFO: [Synth 8-6155] done synthesizing module 'bram_line_buffer' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:79]
-INFO: [Synth 8-6157] synthesizing module 'FIR_filter_5x5' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:162]
+INFO: [Synth 8-6155] done synthesizing module 'bram_line_buffer_ram' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:27]
+INFO: [Synth 8-6155] done synthesizing module 'bram_line_buffer' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:71]
+INFO: [Synth 8-6157] synthesizing module 'FIR_filter_5x5' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:178]
 	Parameter CTRL_DELAY bound to: 8 - type: integer 
-INFO: [Synth 8-6157] synthesizing module 'fir_row_5_cells' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:71]
-INFO: [Synth 8-6157] synthesizing module 'dsp_25x18_passthrough' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:23]
+INFO: [Synth 8-6157] synthesizing module 'fir_row_5_cells' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:85]
+INFO: [Synth 8-6157] synthesizing module 'dsp_25x18_passthrough' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:25]
 	Parameter A_REG bound to: 1 - type: integer 
 	Parameter B_REG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'dsp_25x18_passthrough' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:23]
-INFO: [Synth 8-6157] synthesizing module 'dsp_25x18_passthrough__parameterized0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:23]
+INFO: [Synth 8-6155] done synthesizing module 'dsp_25x18_passthrough' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:25]
+INFO: [Synth 8-6157] synthesizing module 'dsp_25x18_passthrough__parameterized0' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:25]
 	Parameter A_REG bound to: 2 - type: integer 
 	Parameter B_REG bound to: 1 - type: integer 
-INFO: [Synth 8-6155] done synthesizing module 'dsp_25x18_passthrough__parameterized0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:23]
-INFO: [Synth 8-6155] done synthesizing module 'fir_row_5_cells' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:71]
-INFO: [Synth 8-6155] done synthesizing module 'FIR_filter_5x5' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:162]
+INFO: [Synth 8-6155] done synthesizing module 'dsp_25x18_passthrough__parameterized0' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:25]
+INFO: [Synth 8-6155] done synthesizing module 'fir_row_5_cells' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:85]
+INFO: [Synth 8-6155] done synthesizing module 'FIR_filter_5x5' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v:178]
 INFO: [Synth 8-6157] synthesizing module 'hdmi_tx' [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_tx.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_tx' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_tx.v:1]
 INFO: [Synth 8-6155] done synthesizing module 'hdmi_top' (0#1) [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_top.v:23]
-WARNING: [Synth 8-6014] Unused sequential element h_sync_prev_reg was removed.  [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:162]
+WARNING: [Synth 8-6014] Unused sequential element h_sync_prev_reg was removed.  [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v:154]
 WARNING: [Synth 8-3917] design hdmi_top has port led_r[6] driven by constant 0
 WARNING: [Synth 8-7129] Port bt[3] in module hdmi_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port bt[2] in module hdmi_top is either unconnected or has no load
@@ -164,18 +164,18 @@ WARNING: [Synth 8-7129] Port hdmi_tx_hpdn in module hdmi_top is either unconnect
 WARNING: [Synth 8-7129] Port hdmi_tx_scl in module hdmi_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port hdmi_tx_sda in module hdmi_top is either unconnected or has no load
 ---------------------------------------------------------------------------------
-Finished RTL Elaboration : Time (s): cpu = 00:00:20 ; elapsed = 00:00:22 . Memory (MB): peak = 1439.688 ; gain = 674.406
+Finished RTL Elaboration : Time (s): cpu = 00:00:17 ; elapsed = 00:00:18 . Memory (MB): peak = 1438.375 ; gain = 675.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1439.688 ; gain = 674.406
+Finished Handling Custom Attributes : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1438.375 ; gain = 675.395
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:21 ; elapsed = 00:00:22 . Memory (MB): peak = 1439.688 ; gain = 674.406
+Finished RTL Optimization Phase 1 : Time (s): cpu = 00:00:17 ; elapsed = 00:00:19 . Memory (MB): peak = 1438.375 ; gain = 675.395
 ---------------------------------------------------------------------------------
-Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.299 . Memory (MB): peak = 1439.688 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.278 . Memory (MB): peak = 1438.375 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 1 Unisim elements for replacement
 INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-570] Preparing netlist for logic optimization
@@ -210,43 +210,51 @@ Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.s
 Finished Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/chipscope.xdc]
 Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc]
 WARNING: [Constraints 18-619] A clock with name 'clk100M' already exists, overwriting the previous clock with the same name. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:57]
-WARNING: [Vivado 12-507] No nets matched 'hdmi_rx_0/mmcm_clkin'. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:59]
+INFO: [Timing 38-2] Deriving generated clocks [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:62]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_cpu_hdmi_system_clk_wiz_1_0'. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:62]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:62]
+WARNING: [Vivado 12-627] No clocks matched 'mmcm_clkout2'. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:62]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:62]
+WARNING: [Vivado 12-627] No clocks matched 'mmcm_clkout2'. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:63]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:63]
+WARNING: [Vivado 12-627] No clocks matched 'clk_out1_cpu_hdmi_system_clk_wiz_1_0'. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:63]
+INFO: [Vivado 12-626] No clocks found. Please use 'create_clock' or 'create_generated_clock' command to create clocks. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:63]
+WARNING: [Vivado 12-507] No nets matched 'hdmi_rx_0/mmcm_clkin'. [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc:65]
 Finished Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc]
 WARNING: [Project 1-498] One or more constraints failed evaluation while reading constraint file [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc] and the design contains unresolved black boxes. These constraints will be read post-synthesis (as long as their source constraint file is marked as used_in_implementation) and should be applied correctly then. You should review the constraints listed in the file [.Xil/hdmi_top_propImpl.xdc] and check the run log file to verify that these constraints were correctly applied.
 INFO: [Project 1-236] Implementation specific constraints were found while reading constraint file [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/constrs_1/imports/constr/hdmi_top.xdc]. These constraints will be ignored for synthesis but will be used in implementation. Impacted constraints are listed in the file [.Xil/hdmi_top_propImpl.xdc].
 Resolution: To avoid this warning, move constraints listed in [.Xil/hdmi_top_propImpl.xdc] to another XDC file and exclude this new file from synthesis with the used_in_synthesis property (File Properties dialog in GUI) and re-run elaboration/synthesis.
 Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/dont_touch.xdc]
 Finished Parsing XDC File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/dont_touch.xdc]
-INFO: [Timing 38-2] Deriving generated clocks
 Completed Processing XDC Constraints
 
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.006 . Memory (MB): peak = 1504.523 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.005 . Memory (MB): peak = 1482.004 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 1 instances were transformed.
   PLLE2_BASE => PLLE2_ADV: 1 instance 
 
-Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.158 . Memory (MB): peak = 1504.523 ; gain = 0.000
+Constraint Validation Runtime : Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.118 . Memory (MB): peak = 1482.004 ; gain = 0.000
 WARNING: [Timing 38-316] Clock period '20.000' specified during out-of-context synthesis of instance 'processor_inst/inst/microblaze_riscv_0_local_memory/lmb_bram' at clock pin 'clka' is different from the actual clock period '10.000', this can lead to different synthesis results.
 INFO: [Designutils 20-5440] No compile time benefit to using incremental synthesis; A full resynthesis will be run
 INFO: [Designutils 20-4379] Flow is switching to default flow due to incremental criteria not met. If you would like to alter this behaviour and have the flow terminate instead, please set the following parameter config_implementation {autoIncr.Synth.RejectBehavior Terminate}
 ---------------------------------------------------------------------------------
-Finished Constraint Validation : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1504.523 ; gain = 739.242
+Finished Constraint Validation : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1482.004 ; gain = 719.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Loading Part and Timing Information
 ---------------------------------------------------------------------------------
 Loading part: xc7k70tfbg676-1
 ---------------------------------------------------------------------------------
-Finished Loading Part and Timing Information : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1504.523 ; gain = 739.242
+Finished Loading Part and Timing Information : Time (s): cpu = 00:00:38 ; elapsed = 00:00:40 . Memory (MB): peak = 1482.004 ; gain = 719.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Applying 'set_property' XDC Constraints
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:47 ; elapsed = 00:00:51 . Memory (MB): peak = 1504.523 ; gain = 739.242
+Finished applying 'set_property' XDC Constraints : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1482.004 ; gain = 719.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:48 ; elapsed = 00:00:52 . Memory (MB): peak = 1504.523 ; gain = 739.242
+Finished RTL Optimization Phase 2 : Time (s): cpu = 00:00:38 ; elapsed = 00:00:41 . Memory (MB): peak = 1482.004 ; gain = 719.023
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start RTL Component Statistics 
@@ -261,14 +269,13 @@ Detailed RTL Component Info :
 	               18 Bit    Registers := 25    
 	               11 Bit    Registers := 4     
 	                9 Bit    Registers := 2     
-	                8 Bit    Registers := 22    
+	                8 Bit    Registers := 23    
 	                6 Bit    Registers := 3     
 	                1 Bit    Registers := 39    
 +---RAMs : 
 	              16K Bit	(2048 X 8 bit)          RAMs := 4     
 +---Muxes : 
 	   3 Input   11 Bit        Muxes := 1     
-	   2 Input    8 Bit        Muxes := 2     
 ---------------------------------------------------------------------------------
 Finished RTL Component Statistics 
 ---------------------------------------------------------------------------------
@@ -418,8 +425,8 @@ DSP Report: register fir_0/row_3/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0
 DSP Report: register fir_0/row_3/dsp_cell_4/m_reg_reg is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_4/p_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_3/dsp_cell_4/m_reg0 is absorbed into DSP fir_0/row_3/dsp_cell_4/p_reg_reg.
-DSP Report: Generating DSP fir_0/fir_out_o, operation Mode is: PCIN+A:B+C.
-DSP Report: operator fir_0/fir_out_o is absorbed into DSP fir_0/fir_out_o.
+DSP Report: Generating DSP fir_0/row_sum_total, operation Mode is: PCIN+A:B+C.
+DSP Report: operator fir_0/row_sum_total is absorbed into DSP fir_0/row_sum_total.
 DSP Report: Generating DSP fir_0/row_2/dsp_cell_0/p_reg_reg, operation Mode is: (A2*B2)'.
 DSP Report: register fir_0/row_2/dsp_cell_0/b_reg_reg[0] is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
 DSP Report: register fir_0/row_2/dsp_cell_0/p_reg_reg is absorbed into DSP fir_0/row_2/dsp_cell_0/p_reg_reg.
@@ -498,8 +505,8 @@ DSP Report: register fir_0/row_1/dsp_cell_4/p_reg_reg is absorbed into DSP fir_0
 DSP Report: register fir_0/row_1/dsp_cell_4/m_reg_reg is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_4/p_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
 DSP Report: operator fir_0/row_1/dsp_cell_4/m_reg0 is absorbed into DSP fir_0/row_1/dsp_cell_4/p_reg_reg.
-DSP Report: Generating DSP fir_0/fir_out_o, operation Mode is: PCIN+A:B+C.
-DSP Report: operator fir_0/fir_out_o is absorbed into DSP fir_0/fir_out_o.
+DSP Report: Generating DSP fir_0/row_sum_total, operation Mode is: PCIN+A:B+C.
+DSP Report: operator fir_0/row_sum_total is absorbed into DSP fir_0/row_sum_total.
 WARNING: [Synth 8-3917] design hdmi_top has port led_r[6] driven by constant 0
 WARNING: [Synth 8-7129] Port bt[3] in module hdmi_top is either unconnected or has no load
 WARNING: [Synth 8-7129] Port bt[2] in module hdmi_top is either unconnected or has no load
@@ -519,7 +526,7 @@ WARNING: [Synth 8-7129] Port hdmi_tx_scl in module hdmi_top is either unconnecte
 WARNING: [Synth 8-7129] Port hdmi_tx_sda in module hdmi_top is either unconnected or has no load
 WARNING: [Synth 8-3332] Sequential element (fir_0/row_1/dsp_cell_0/p_reg_reg) is unused and will be removed from module hdmi_top.
 ---------------------------------------------------------------------------------
-Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:58 ; elapsed = 00:01:03 . Memory (MB): peak = 1504.523 ; gain = 739.242
+Finished Cross Boundary and Area Optimization : Time (s): cpu = 00:00:46 ; elapsed = 00:00:49 . Memory (MB): peak = 1497.703 ; gain = 734.723
 ---------------------------------------------------------------------------------
  Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 0 : 3079 17967 : Used 1 time 0
  Sort Area is  fir_0/row_0/dsp_cell_0/p_reg_reg_9 : 0 1 : 3532 17967 : Used 1 time 0
@@ -610,13 +617,13 @@ Start Applying XDC Timing Constraints
 ---------------------------------------------------------------------------------
 WARNING: [Synth 8-565] redefining clock 'clk100M'
 ---------------------------------------------------------------------------------
-Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 1691.715 ; gain = 926.434
+Finished Applying XDC Timing Constraints : Time (s): cpu = 00:01:03 ; elapsed = 00:01:06 . Memory (MB): peak = 1685.625 ; gain = 922.645
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Timing Optimization
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Timing Optimization : Time (s): cpu = 00:01:18 ; elapsed = 00:01:25 . Memory (MB): peak = 1692.977 ; gain = 927.695
+Finished Timing Optimization : Time (s): cpu = 00:01:03 ; elapsed = 00:01:07 . Memory (MB): peak = 1686.816 ; gain = 923.836
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -643,7 +650,7 @@ INFO: [Synth 8-7052] The timing for the instance line_buffer_0/bram_line_1/mem_r
 INFO: [Synth 8-7052] The timing for the instance line_buffer_0/bram_line_2/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 INFO: [Synth 8-7052] The timing for the instance line_buffer_0/bram_line_3/mem_reg (implemented as a Block RAM) might be sub-optimal as no optional output register could be merged into the ram block. Providing additional output register may help in improving timing.
 ---------------------------------------------------------------------------------
-Finished Technology Mapping : Time (s): cpu = 00:01:19 ; elapsed = 00:01:26 . Memory (MB): peak = 1705.270 ; gain = 939.988
+Finished Technology Mapping : Time (s): cpu = 00:01:03 ; elapsed = 00:01:07 . Memory (MB): peak = 1699.117 ; gain = 936.137
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start IO Insertion
@@ -661,37 +668,37 @@ Start Final Netlist Cleanup
 Finished Final Netlist Cleanup
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished IO Insertion : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1949.984 ; gain = 1184.703
+Finished IO Insertion : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1944.527 ; gain = 1181.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Instances
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Instances : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1949.984 ; gain = 1184.703
+Finished Renaming Generated Instances : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1944.527 ; gain = 1181.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Rebuilding User Hierarchy
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1949.984 ; gain = 1184.703
+Finished Rebuilding User Hierarchy : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1944.527 ; gain = 1181.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Ports
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Ports : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1949.984 ; gain = 1184.703
+Finished Renaming Generated Ports : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1944.527 ; gain = 1181.547
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Handling Custom Attributes
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Handling Custom Attributes : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1952.961 ; gain = 1187.680
+Finished Handling Custom Attributes : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1947.547 ; gain = 1184.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start Renaming Generated Nets
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
-Finished Renaming Generated Nets : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1952.961 ; gain = 1187.680
+Finished Renaming Generated Nets : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1947.547 ; gain = 1184.566
 ---------------------------------------------------------------------------------
 ---------------------------------------------------------------------------------
 Start ROM, RAM, DSP, Shift Register and Retiming Reporting
@@ -804,49 +811,49 @@ Report Cell Usage:
 |16    |CARRY4                                        |     6|
 |17    |DSP48E1                                       |    29|
 |22    |LUT1                                          |     1|
-|23    |LUT2                                          |    36|
+|23    |LUT2                                          |    44|
 |24    |LUT3                                          |    15|
-|25    |LUT4                                          |     7|
-|26    |LUT5                                          |     4|
-|27    |LUT6                                          |    12|
+|25    |LUT4                                          |     2|
+|26    |LUT5                                          |     2|
+|27    |LUT6                                          |     9|
 |28    |PLLE2_BASE                                    |     1|
 |29    |RAMB18E1                                      |     4|
 |30    |SRL16E                                        |    16|
-|31    |FDRE                                          |   391|
+|31    |FDRE                                          |   399|
 |32    |IBUF                                          |    12|
 |33    |OBUF                                          |    18|
 +------+----------------------------------------------+------+
 ---------------------------------------------------------------------------------
-Finished Writing Synthesis Report : Time (s): cpu = 00:01:32 ; elapsed = 00:01:40 . Memory (MB): peak = 1952.961 ; gain = 1187.680
+Finished Writing Synthesis Report : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1947.547 ; gain = 1184.566
 ---------------------------------------------------------------------------------
 Synthesis finished with 0 errors, 0 critical warnings and 19 warnings.
-Synthesis Optimization Runtime : Time (s): cpu = 00:01:04 ; elapsed = 00:01:32 . Memory (MB): peak = 1952.961 ; gain = 1122.844
-Synthesis Optimization Complete : Time (s): cpu = 00:01:33 ; elapsed = 00:01:41 . Memory (MB): peak = 1952.961 ; gain = 1187.680
+Synthesis Optimization Runtime : Time (s): cpu = 00:00:49 ; elapsed = 00:01:10 . Memory (MB): peak = 1947.547 ; gain = 1140.938
+Synthesis Optimization Complete : Time (s): cpu = 00:01:13 ; elapsed = 00:01:17 . Memory (MB): peak = 1947.547 ; gain = 1184.566
 INFO: [Project 1-571] Translating synthesized netlist
 Parsing EDIF File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.edn]
 Finished Parsing EDIF File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_rx.edn]
 Parsing EDIF File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_tx.edn]
 Finished Parsing EDIF File [C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sources_1/imports/hdl/hdmi_tx.edn]
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.176 . Memory (MB): peak = 1967.707 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:01 ; elapsed = 00:00:00.138 . Memory (MB): peak = 1962.285 ; gain = 0.000
 INFO: [Netlist 29-17] Analyzing 94 Unisim elements for replacement
-INFO: [Netlist 29-28] Unisim Transformation completed in 1 CPU seconds
+INFO: [Netlist 29-28] Unisim Transformation completed in 0 CPU seconds
 INFO: [Project 1-479] Netlist was created with Vivado 2018.2
 INFO: [Project 1-570] Preparing netlist for logic optimization
 INFO: [Opt 31-140] Inserted 1 IBUFs to IO ports without IO buffers.
 INFO: [Opt 31-138] Pushed 0 inverter(s) to 0 load pin(s).
-Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.002 . Memory (MB): peak = 1975.363 ; gain = 0.000
+Netlist sorting complete. Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.003 . Memory (MB): peak = 1969.926 ; gain = 0.000
 INFO: [Project 1-111] Unisim Transformation Summary:
   A total of 8 instances were transformed.
   IOBUF => IOBUF (IBUF, OBUFT): 1 instance 
   PLLE2_BASE => PLLE2_ADV: 1 instance 
   RAM32M => RAM32M (RAMD32(x6), RAMS32(x2)): 6 instances
 
-Synth Design complete | Checksum: 46897b1b
+Synth Design complete | Checksum: d1b1a6f9
 INFO: [Common 17-83] Releasing license: Synthesis
-89 Infos, 60 Warnings, 0 Critical Warnings and 0 Errors encountered.
+93 Infos, 64 Warnings, 0 Critical Warnings and 0 Errors encountered.
 synth_design completed successfully
-synth_design: Time (s): cpu = 00:01:45 ; elapsed = 00:02:00 . Memory (MB): peak = 1975.363 ; gain = 1392.656
-Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1975.363 ; gain = 0.000
+synth_design: Time (s): cpu = 00:01:25 ; elapsed = 00:01:34 . Memory (MB): peak = 1969.926 ; gain = 1386.055
+Write ShapeDB Complete: Time (s): cpu = 00:00:00 ; elapsed = 00:00:00.008 . Memory (MB): peak = 1969.926 ; gain = 0.000
 INFO: [Common 17-1381] The checkpoint 'C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.runs/synth_1/hdmi_top.dcp' has been generated.
 INFO: [Vivado 12-24828] Executing command : report_utilization -file hdmi_top_utilization_synth.rpt -pb hdmi_top_utilization_synth.pb
-INFO: [Common 17-206] Exiting Vivado at Mon Jun  8 16:27:31 2026...
+INFO: [Common 17-206] Exiting Vivado at Tue Jun  9 15:56:34 2026...

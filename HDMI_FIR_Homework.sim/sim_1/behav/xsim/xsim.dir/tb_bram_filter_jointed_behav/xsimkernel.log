@@ -1,7 +1,7 @@
-Running: xsim.dir/tb_bram_filter_jointed_behav/xsimk.exe -simmode gui -wdb tb_bram_filter_jointed_behav.wdb -simrunnum 0 -socket 57481
+Running: xsim.dir/tb_bram_filter_jointed_behav/xsimk.exe -simmode gui -wdb tb_bram_filter_jointed_behav.wdb -simrunnum 0 -socket 64573
 Design successfully loaded
-Design Loading Memory Usage: 11276 KB (Peak: 11276 KB)
-Design Loading CPU Usage: 93 ms
+Design Loading Memory Usage: 11836 KB (Peak: 11836 KB)
+Design Loading CPU Usage: 124 ms
 Simulation completed
-Simulation Memory Usage: 12396 KB (Peak: 12396 KB)
-Simulation CPU Usage: 217 ms
+Simulation Memory Usage: 13016 KB (Peak: 13016 KB)
+Simulation CPU Usage: 234 ms

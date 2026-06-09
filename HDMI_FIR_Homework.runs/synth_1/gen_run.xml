@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<GenRun Id="synth_1" LaunchPart="xc7k70tfbg676-1" LaunchTime="1780928691" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hdmi_top.dcp">
-  <File Type="PA-TCL" Name="hdmi_top.tcl"/>
+<GenRun Id="synth_1" LaunchPart="xc7k70tfbg676-1" LaunchTime="1781013257" LaunchIncrCheckpoint="$PSRCDIR/utils_1/imports/synth_1/hdmi_top.dcp">
   <File Type="REPORTS-TCL" Name="hdmi_top_reports.tcl"/>
-  <File Type="RDS-RDS" Name="hdmi_top.vds"/>
-  <File Type="RDS-PROPCONSTRS" Name="hdmi_top_drc_synth.rpt"/>
   <File Type="RDS-UTIL" Name="hdmi_top_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="hdmi_top_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="hdmi_top.tcl"/>
+  <File Type="RDS-RDS" Name="hdmi_top.vds"/>
   <File Type="RDS-DCP" Name="hdmi_top.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="hdmi_top_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="hdmi_top_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="DesignSrcs" RelSrcDir="$PSRCDIR/sources_1" RelGenDir="$PGENDIR/sources_1">
     <Filter Type="Srcs"/>
     <File Path="$PSRCDIR/sources_1/imports/hdl/tf_rgb2y.v">
@@ -158,8 +155,8 @@
   </Strategy>
   <BlockFileSet Type="BlockSrcs" Name="cpu_hdmi_system_microblaze_riscv_0_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_hdmi_system_dlmb_v10_0"/>
-  <BlockFileSet Type="BlockSrcs" Name="cpu_hdmi_system_ilmb_v10_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_hdmi_system_dlmb_bram_if_cntlr_0"/>
+  <BlockFileSet Type="BlockSrcs" Name="cpu_hdmi_system_ilmb_v10_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_hdmi_system_ilmb_bram_if_cntlr_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_hdmi_system_lmb_bram_0"/>
   <BlockFileSet Type="BlockSrcs" Name="cpu_hdmi_system_mdm_1_0"/>

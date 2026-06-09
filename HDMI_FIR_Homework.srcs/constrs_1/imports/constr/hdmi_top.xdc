@@ -55,7 +55,13 @@ set_property PACKAGE_PIN M21 [get_ports uart_txd]
 set_property IOSTANDARD LVCMOS33 [get_ports uart_txd]
 
 create_clock -period 10.000 -name clk100M -waveform {0.000 5.000} [get_ports clk100M]
+set_input_jitter [get_clocks clk100M] 0.100
 create_clock -period 10.000 -name hdmi_rx_clk_p -waveform {0.000 5.000} [get_ports hdmi_rx_clk_p]
+
+# The CPU subsystem clock and the HDMI RX MMCM pixel clock are independent domains.
+set_false_path -from [get_clocks clk_out1_cpu_hdmi_system_clk_wiz_1_0] -to [get_clocks mmcm_clkout2]
+set_false_path -from [get_clocks mmcm_clkout2] -to [get_clocks clk_out1_cpu_hdmi_system_clk_wiz_1_0]
+
 set_property CLOCK_DEDICATED_ROUTE BACKBONE [get_nets hdmi_rx_0/mmcm_clkin]
 
 set_property CONFIG_VOLTAGE 3.3 [current_design]

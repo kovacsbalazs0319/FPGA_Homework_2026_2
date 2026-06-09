@@ -1,0 +1,11 @@
+# compile verilog/system verilog design source files
+verilog xil_defaultlib  --include "../../../../../../../../../../AMDDesignTools/2025.2/Vivado/data/rsb/busdef" --include "../../../../HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ipshared/f0b6/hdl/verilog" --include "../../../../HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ipshared/00fe/hdl/verilog" --include "../../../../HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ipshared/ec67/hdl" --include "../../../../HDMI_FIR_Homework.gen/sources_1/bd/cpu_hdmi_system/ipshared/a415" --include "C:/AMDDesignTools/2025.2/Vivado/data/xilinx_vip/include" \
+"../../../../HDMI_FIR_Homework.srcs/sources_1/new/5x5_FIR_filter.v" \
+"../../../../HDMI_FIR_Homework.srcs/sources_1/new/bram_line_buffer.v" \
+"../../../../HDMI_FIR_Homework.srcs/sim_1/new/tb_bram_filter_jointed.v" \
+
+# compile glbl module
+verilog xil_defaultlib "glbl.v"
+
+# Do not sort compile order
+nosort

@@ -19,6 +19,8 @@ module rgb2y(
 
 integer i;
 reg [7:0] g_dl[2:0];
+// The green component is added back only after the first DSP stage,
+// so it must be delayed to match the partial-product pipeline.
 always @ (posedge clk)
 for (i=0; i<3; i=i+1)
     g_dl[i] <= (i==0) ? g_i : g_dl[i-1];
@@ -56,6 +58,8 @@ always @ (posedge clk)
 if (p_o[1][47])
     sat <= 8'b0;
 else
+    // The fixed-point result is Q17-scaled, so bits [24:17] carry the
+    // 8-bit grayscale value once negative results have been clamped.
     sat <= p_o[1][24:17];
     
 assign y_o = sat;
@@ -63,6 +67,8 @@ assign y_o = sat;
 reg [5:0] hs_dl;
 reg [5:0] vs_dl;
 reg [5:0] dv_dl; 
+// Keep the control signals aligned with the 6-cycle data path latency
+// of the RGB-to-luma conversion, including the final saturation register.
 always @ (posedge clk)
 for (i=0; i<6; i=i+1)
 begin

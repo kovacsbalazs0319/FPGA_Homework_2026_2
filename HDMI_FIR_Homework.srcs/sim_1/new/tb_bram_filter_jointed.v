@@ -54,9 +54,9 @@ wire signed [24:0] pixel_3_fir;
 wire signed [24:0] pixel_4_fir;
 
 wire        [7:0]  fir_out_sat;
-wire               fir_valid_o;
-wire               fir_h_sync_o;
-wire               fir_v_sync_o;
+wire               fir_valid_out;
+wire               fir_h_sync_out;
+wire               fir_v_sync_out;
 
 assign pixel_0_fir = {17'd0, current_pixel};
 assign pixel_1_fir = {17'd0, line_1_pixel};
@@ -86,7 +86,7 @@ bram_line_buffer #(
 );
 
 FIR_filter_5x5 #(
-    .CTRL_DELAY(8)
+    .CTRL_DELAY(12)
 ) dut_fir (
     .clk(clk),
     .pixel_valid_i(pixel_valid_out),
@@ -123,9 +123,9 @@ FIR_filter_5x5 #(
     .coeff_43_i(16'sd0),
     .coeff_44_i(16'sd256),
     .fir_out_sat(fir_out_sat),
-    .pixel_valid_o(fir_valid_o),
-    .h_sync_o(fir_h_sync_o),
-    .v_sync_o(fir_v_sync_o)
+    .pixel_valid_out(fir_valid_out),
+    .h_sync_out(fir_h_sync_out),
+    .v_sync_out(fir_v_sync_out)
 );
 
 always #5 clk = ~clk;
@@ -189,9 +189,9 @@ always @(posedge clk) begin
         $display("[%0t] LB/FIR: lb_valid=%0b fir_valid=%0b hs=%0b hs_fir=%0b pixels={%0d,%0d,%0d,%0d,%0d} sat=%0d",
             $time,
             pixel_valid_out,
-            fir_valid_o,
+            fir_valid_out,
             h_sync_out,
-            fir_h_sync_o,
+            fir_h_sync_out,
             pixel_4_fir,
             pixel_3_fir,
             pixel_2_fir,

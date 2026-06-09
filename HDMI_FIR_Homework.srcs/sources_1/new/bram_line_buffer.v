@@ -10,11 +10,8 @@
 // Target Devices:
 // Tool Versions:
 // Description:
-//   High-level 4-stage BRAM line buffer chain.
-//
-//   Each stage uses a read-first line RAM. Because the data read from a BRAM
-//   address becomes valid one clock later, the address and valid/control signals
-//   are delayed by one extra cycle per stage to keep the column indices aligned.
+//   Four-stage BRAM line buffer for building the vertical 5-pixel window
+//   required by the downstream 5x5 FIR filter.
 //
 // Dependencies:
 //
@@ -25,11 +22,7 @@
 //////////////////////////////////////////////////////////////////////////////////
 
 /*
- * Internal single-line storage primitive.
- *
- * Memory behavior:
- *   Read-first mode is required:
- *   dout receives the previous content at addr before din overwrites it.
+ * Single-line storage primitive.
  */
 module bram_line_buffer_ram#(
 
@@ -50,6 +43,9 @@ module bram_line_buffer_ram#(
 reg [DATA_WIDTH-1:0] mem [0:LINE_WIDTH-1];
 integer init_idx;
 
+/*
+ * Initially set BRAMs to 0 for deterministic behaviour
+ */
 initial begin
     for (init_idx = 0; init_idx < LINE_WIDTH; init_idx = init_idx + 1)
         mem[init_idx] = {DATA_WIDTH{1'b0}};
@@ -58,6 +54,7 @@ end
 
 always @(posedge clk) begin
     if (en) begin
+        // Read First mode
         dout      <= mem[addr];
         mem[addr] <= din;
     end
@@ -66,15 +63,10 @@ end
 endmodule
 
 /*
- * High-level 4-stage BRAM line buffer chain.
+ * Four cascaded line memories store the previous 4 image rows.
  *
- * Inputs:
- *   pixel_in     - incoming pixel stream
- *   pixel_valid  - high when pixel_in is valid and should advance the column
- *   h_sync       - start-of-line marker, resets the column counter to 0
- *
- * The externally visible outputs are aligned to the deepest BRAM stage so the
- * five vertical taps can be consumed together by the downstream FIR logic.
+ * The visible outputs are delayed so that current_pixel and the four buffered
+ * lines all correspond to the same column when the FIR consumes them.
  */
 module bram_line_buffer#(
 
@@ -102,24 +94,22 @@ module bram_line_buffer#(
     output wire                  v_sync_out
 );
 
-wire [ADDR_WIDTH-1:0] line_width_minus_one;
-assign line_width_minus_one = LINE_WIDTH - 1;
-
 reg  [ADDR_WIDTH-1:0] column_addr;
 wire [ADDR_WIDTH-1:0] addr_current;
-wire                  stream_advance;
+wire                  write_enable;
 wire [DATA_WIDTH-1:0] pixel_or_black;
 
-assign stream_advance = 1'b1;
+// The BRAM chain advances every clock; blanked pixels are written as zeros.
+assign write_enable = 1'b1;
 assign pixel_or_black = pixel_valid ? pixel_in : {DATA_WIDTH{1'b0}};
 
 reg  [ADDR_WIDTH-1:0] addr_delayed1;
 reg  [ADDR_WIDTH-1:0] addr_delayed2;
 reg  [ADDR_WIDTH-1:0] addr_delayed3;
 
-reg                   valid_delayed1;
-reg                   valid_delayed2;
-reg                   valid_delayed3;
+reg                   write_enable_delayed1;
+reg                   write_enable_delayed2;
+reg                   write_enable_delayed3;
 
 reg                   pixel_valid_d1;
 reg                   pixel_valid_d2;
@@ -137,16 +127,19 @@ reg                   v_sync_d2;
 reg                   v_sync_d3;
 reg                   v_sync_d4;
 
+// Raw outputs of the four BRAM stages before final tap alignment.
 wire [DATA_WIDTH-1:0] line_1_bram_pixel;
 wire [DATA_WIDTH-1:0] line_2_bram_pixel;
 wire [DATA_WIDTH-1:0] line_3_bram_pixel;
 wire [DATA_WIDTH-1:0] line_4_bram_pixel;
 
+// Internal delay chain for aligning the current input pixel to the deepest tap.
 reg  [DATA_WIDTH-1:0] current_pixel_delayed1;
 reg  [DATA_WIDTH-1:0] current_pixel_delayed2;
 reg  [DATA_WIDTH-1:0] current_pixel_delayed3;
 reg  [DATA_WIDTH-1:0] current_pixel_delayed4;
 
+// Extra alignment registers for the shallower buffered lines.
 reg  [DATA_WIDTH-1:0] line_1_pixel_delayed1;
 reg  [DATA_WIDTH-1:0] line_1_pixel_delayed2;
 reg  [DATA_WIDTH-1:0] line_1_pixel_delayed3;
@@ -157,8 +150,7 @@ reg  [DATA_WIDTH-1:0] line_2_pixel_delayed2;
 reg  [DATA_WIDTH-1:0] line_3_pixel_delayed1;
 wire                  start_of_line;
 
-// Force address 0 on the first pixel of a new line so the write/read pair
-// starts from column 0 immediately, independent of the previously stored count.
+// Restart the circular addressing from column 0 on each new line.
 assign start_of_line = h_sync & ~h_sync_prev;
 assign addr_current = start_of_line ? {ADDR_WIDTH{1'b0}} : column_addr;
 
@@ -170,9 +162,9 @@ always @(posedge clk) begin
         addr_delayed2   <= {ADDR_WIDTH{1'b0}};
         addr_delayed3   <= {ADDR_WIDTH{1'b0}};
 
-        valid_delayed1  <= 1'b0;
-        valid_delayed2  <= 1'b0;
-        valid_delayed3  <= 1'b0;
+        write_enable_delayed1  <= 1'b0;
+        write_enable_delayed2  <= 1'b0;
+        write_enable_delayed3  <= 1'b0;
 
         pixel_valid_d1  <= 1'b0;
         pixel_valid_d2  <= 1'b0;
@@ -209,21 +201,23 @@ always @(posedge clk) begin
 
         if (start_of_line) begin
             column_addr <= {{(ADDR_WIDTH-1){1'b0}}, 1'b1};
-        end else if (stream_advance) begin
-            if (column_addr == line_width_minus_one) begin
+        end else if (write_enable) begin
+            if (column_addr == LINE_WIDTH - 1) begin
                 column_addr <= {ADDR_WIDTH{1'b0}};
             end else begin
                 column_addr <= column_addr + 1'b1;
             end
         end
 
+        // Each later BRAM stage reads the same column one cycle later.
         addr_delayed1  <= addr_current;
         addr_delayed2  <= addr_delayed1;
         addr_delayed3  <= addr_delayed2;
 
-        valid_delayed1 <= stream_advance;
-        valid_delayed2 <= valid_delayed1;
-        valid_delayed3 <= valid_delayed2;
+        // The delayed enables keep the BRAM pipeline aligned with read-first latency.
+        write_enable_delayed1 <= write_enable;
+        write_enable_delayed2 <= write_enable_delayed1;
+        write_enable_delayed3 <= write_enable_delayed2;
 
         pixel_valid_d1 <= pixel_valid;
         pixel_valid_d2 <= pixel_valid_d1;
@@ -240,11 +234,13 @@ always @(posedge clk) begin
         v_sync_d3      <= v_sync_d2;
         v_sync_d4      <= v_sync_d3;
 
+        // Match the current input pixel to the latency of the deepest line output.
         current_pixel_delayed1 <= pixel_or_black;
         current_pixel_delayed2 <= current_pixel_delayed1;
         current_pixel_delayed3 <= current_pixel_delayed2;
         current_pixel_delayed4 <= current_pixel_delayed3;
 
+        // The buffered rows need progressively fewer extra delay stages.
         line_1_pixel_delayed1 <= line_1_bram_pixel;
         line_1_pixel_delayed2 <= line_1_pixel_delayed1;
         line_1_pixel_delayed3 <= line_1_pixel_delayed2;
@@ -262,7 +258,7 @@ bram_line_buffer_ram #(
     .ADDR_WIDTH(ADDR_WIDTH)
 ) bram_line_0 (
     .clk(clk),
-    .en(stream_advance),
+    .en(write_enable),
     .addr(addr_current),
     .din(pixel_or_black),
     .dout(line_1_bram_pixel)
@@ -274,7 +270,7 @@ bram_line_buffer_ram #(
     .ADDR_WIDTH(ADDR_WIDTH)
 ) bram_line_1 (
     .clk(clk),
-    .en(valid_delayed1),
+    .en(write_enable_delayed1),
     .addr(addr_delayed1),
     .din(line_1_bram_pixel),
     .dout(line_2_bram_pixel)
@@ -286,7 +282,7 @@ bram_line_buffer_ram #(
     .ADDR_WIDTH(ADDR_WIDTH)
 ) bram_line_2 (
     .clk(clk),
-    .en(valid_delayed2),
+    .en(write_enable_delayed2),
     .addr(addr_delayed2),
     .din(line_2_bram_pixel),
     .dout(line_3_bram_pixel)
@@ -298,18 +294,25 @@ bram_line_buffer_ram #(
     .ADDR_WIDTH(ADDR_WIDTH)
 ) bram_line_3 (
     .clk(clk),
-    .en(valid_delayed3),
+    .en(write_enable_delayed3),
     .addr(addr_delayed3),
     .din(line_3_bram_pixel),
     .dout(line_4_bram_pixel)
 );
 
+// Output alignment:
+//   current_pixel -> 4 extra cycles
+//   line_1_pixel  -> 3 extra cycles
+//   line_2_pixel  -> 2 extra cycles
+//   line_3_pixel  -> 1 extra cycle
+//   line_4_pixel  -> no extra delay
 assign current_pixel    = current_pixel_delayed4;
 assign line_1_pixel     = line_1_pixel_delayed3;
 assign line_2_pixel     = line_2_pixel_delayed2;
 assign line_3_pixel     = line_3_pixel_delayed1;
 assign line_4_pixel     = line_4_bram_pixel;
 
+// Control signals are delayed by the same 4 cycles as the visible data path.
 assign pixel_valid_out  = pixel_valid_d4;
 assign h_sync_out       = h_sync_d4;
 assign v_sync_out       = v_sync_d4;

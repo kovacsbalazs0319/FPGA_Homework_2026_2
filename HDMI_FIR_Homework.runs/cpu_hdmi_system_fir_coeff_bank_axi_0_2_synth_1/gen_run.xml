@@ -1,14 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <GenRun Id="cpu_hdmi_system_fir_coeff_bank_axi_0_2_synth_1" LaunchPart="xc7k70tfbg676-1" LaunchTime="1780928560">
-  <File Type="PA-TCL" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2.tcl"/>
-  <File Type="RDS-PROPCONSTRS" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2_drc_synth.rpt"/>
   <File Type="REPORTS-TCL" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2_reports.tcl"/>
-  <File Type="RDS-RDS" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2.vds"/>
   <File Type="RDS-UTIL" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2_utilization_synth.rpt"/>
   <File Type="RDS-UTIL-PB" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2_utilization_synth.pb"/>
+  <File Type="PA-TCL" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2.tcl"/>
+  <File Type="RDS-RDS" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2.vds"/>
   <File Type="RDS-DCP" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2.dcp"/>
-  <File Type="VDS-TIMINGSUMMARY" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2_timing_summary_synth.rpt"/>
-  <File Type="VDS-TIMING-PB" Name="cpu_hdmi_system_fir_coeff_bank_axi_0_2_timing_summary_synth.pb"/>
   <FileSet Name="sources" Type="BlockSrcs" RelSrcDir="$PSRCDIR/cpu_hdmi_system_fir_coeff_bank_axi_0_2" RelGenDir="$PGENDIR/cpu_hdmi_system_fir_coeff_bank_axi_0_2">
     <File Path="$PSRCDIR/sources_1/bd/cpu_hdmi_system/ip/cpu_hdmi_system_fir_coeff_bank_axi_0_2/cpu_hdmi_system_fir_coeff_bank_axi_0_2.xci">
       <FileInfo>
@@ -52,9 +49,7 @@
     </Config>
   </FileSet>
   <Strategy Version="1" Minor="2">
-    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025">
-      <Desc>Vivado Synthesis Defaults</Desc>
-    </StratHandle>
+    <StratHandle Name="Vivado Synthesis Defaults" Flow="Vivado Synthesis 2025"/>
     <Step Id="synth_design"/>
   </Strategy>
 </GenRun>

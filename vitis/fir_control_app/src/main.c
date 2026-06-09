@@ -7,6 +7,7 @@ static int decimal4_to_q8_8_raw(int decimal4_value)
 {
     long long scaled;
 
+    /* Round the 4-decimal fixed-point input to the nearest Q8.8 integer. */
     if (decimal4_value >= 0) {
         scaled = (long long)decimal4_value * 256 + 5000;
     } else {
@@ -20,6 +21,7 @@ static void load_default_coefficients(void)
 {
     int coeff_index;
 
+    /* Clear all 25 coefficient registers before loading the identity tap. */
     for (coeff_index = 0; coeff_index < 25; ++coeff_index) {
         Xil_Out32(XPAR_FIR_COEFF_BANK_AXI_0_BASEADDR + 4 * coeff_index, 0);
     }
@@ -51,6 +53,7 @@ int main(void)
     xil_printf("Default kernel after reset: EH 24 = +1.0000, others 0.\r\n\r\n");
 
     while (1) {
+        /* Poll the UART until a new character arrives. */
         while (XUartLite_IsReceiveEmpty(XPAR_XUARTLITE_0_BASEADDR)) {
         }
 
@@ -76,6 +79,7 @@ int main(void)
             input_line[input_length] = '\0';
             cursor = input_line;
 
+            /* Accept optional leading whitespace and the "EH n:" prefix. */
             while (*cursor == ' ' || *cursor == '\t') {
                 ++cursor;
             }
@@ -147,11 +151,13 @@ int main(void)
                 valid = 0;
             }
 
+            /* More than 4 fractional digits would not match the decimal4 format. */
             if (frac_digits > 4) {
                 valid = 0;
             }
 
             if (valid) {
+                /* Store coefficients as signed integers scaled by 10^4. */
                 value = sign * (int_part * 10000 + frac_part);
                 decimal4_coefficients[stored_coefficients] = value;
                 ++stored_coefficients;
@@ -177,6 +183,7 @@ int main(void)
                                    abs_value % 10000);
                     }
 
+                    /* Convert and write the full 5x5 coefficient set in register order. */
                     for (coeff_index = 0; coeff_index < 25; ++coeff_index) {
                         int q8_8_raw = decimal4_to_q8_8_raw(
                             decimal4_coefficients[coeff_index]);
@@ -192,10 +199,12 @@ int main(void)
                 xil_printf("Invalid format. Use +0.0011 or EH n: +0.0011\r\n");
             }
 
+            /* Start collecting the next input line after Enter. */
             input_length = 0;
         } else if ((received_byte == 8 || received_byte == 127) && input_length > 0) {
             --input_length;
 
+            /* Echo backspace in a terminal-friendly way. */
             while (XUartLite_IsTransmitFull(XPAR_XUARTLITE_0_BASEADDR)) {
             }
             XUartLite_SendByte(XPAR_XUARTLITE_0_BASEADDR, 8);
@@ -209,6 +218,7 @@ int main(void)
             input_line[input_length] = (char)received_byte;
             ++input_length;
 
+            /* Echo regular characters so the typed coefficient is visible on UART. */
             while (XUartLite_IsTransmitFull(XPAR_XUARTLITE_0_BASEADDR)) {
             }
             XUartLite_SendByte(XPAR_XUARTLITE_0_BASEADDR, received_byte);

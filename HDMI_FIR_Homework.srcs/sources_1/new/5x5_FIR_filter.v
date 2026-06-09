@@ -19,7 +19,9 @@
 // 
 //////////////////////////////////////////////////////////////////////////////////
 
-
+/*
+ * DSP with passthrough for systolic mode
+ */
 module dsp_25x18_passthrough
 #(
     parameter integer A_REG = 2,
@@ -40,6 +42,10 @@ reg signed [47:0] p_reg;
 integer i;
 integer init_idx;
 
+
+/*
+ * For deterministic behaviour set registers to 0 initially
+ */
 initial begin
     for (init_idx = 0; init_idx < A_REG; init_idx = init_idx + 1)
         a_reg[init_idx] = 25'sd0;
@@ -49,6 +55,12 @@ initial begin
     p_reg = 48'sd0;
 end
 
+/*
+ * Parameterized registering, this is for easier object marking
+ * for the systolic FIR
+ * A is for the data
+ * B is for the coeff
+ */
 always @(posedge clk)
 for (i = 0; i < A_REG; i = i + 1)
     a_reg[i] <= (i == 0) ? a : a_reg[i-1];
@@ -67,7 +79,9 @@ assign p = p_reg;
 
 endmodule
 
-
+/*
+ * 1 row of systolic Fir filetr, 1D
+ */
 module fir_row_5_cells
 (
     input  wire                     clk,
@@ -81,7 +95,7 @@ module fir_row_5_cells
     output wire signed [47:0]       p_o
 );
 
-localparam integer B_REG_ALL = 1;
+localparam integer COEFF_REG_STAGES = 1;
 
 wire signed [24:0] pixel_0_to_1;
 wire signed [24:0] pixel_1_to_2;
@@ -96,7 +110,7 @@ wire signed [47:0] p_4;
 
 dsp_25x18_passthrough #(
     .A_REG(1),
-    .B_REG(B_REG_ALL)
+    .B_REG(COEFF_REG_STAGES)
 ) dsp_cell_0 (
     .clk(clk),
     .a(pixel_in),
@@ -108,7 +122,7 @@ dsp_25x18_passthrough #(
 
 dsp_25x18_passthrough #(
     .A_REG(2),
-    .B_REG(B_REG_ALL)
+    .B_REG(COEFF_REG_STAGES)
 ) dsp_cell_1 (
     .clk(clk),
     .a(pixel_0_to_1),
@@ -120,7 +134,7 @@ dsp_25x18_passthrough #(
 
 dsp_25x18_passthrough #(
     .A_REG(2),
-    .B_REG(B_REG_ALL)
+    .B_REG(COEFF_REG_STAGES)
 ) dsp_cell_2 (
     .clk(clk),
     .a(pixel_1_to_2),
@@ -132,7 +146,7 @@ dsp_25x18_passthrough #(
 
 dsp_25x18_passthrough #(
     .A_REG(2),
-    .B_REG(B_REG_ALL)
+    .B_REG(COEFF_REG_STAGES)
 ) dsp_cell_3 (
     .clk(clk),
     .a(pixel_2_to_3),
@@ -144,7 +158,7 @@ dsp_25x18_passthrough #(
 
 dsp_25x18_passthrough #(
     .A_REG(2),
-    .B_REG(B_REG_ALL)
+    .B_REG(COEFF_REG_STAGES)
 ) dsp_cell_4 (
     .clk(clk),
     .a(pixel_3_to_4),
@@ -158,9 +172,11 @@ assign p_o = p_4;
 
 endmodule
 
-
+/*
+ * full 5x5 window from the 5 rows
+ */
 module FIR_filter_5x5 #(
-    parameter integer CTRL_DELAY = 11
+    parameter integer CTRL_DELAY = 12
 )(
     input  wire                     clk,
     input  wire                     pixel_valid_i,
@@ -196,7 +212,7 @@ module FIR_filter_5x5 #(
     input  wire signed [15:0]       coeff_42_i,
     input  wire signed [15:0]       coeff_43_i,
     input  wire signed [15:0]       coeff_44_i,
-    output wire [7:0]               fir_out_sat,
+    output reg  [7:0]               fir_out_sat,
     output wire                     pixel_valid_out,
     output wire                     h_sync_out,
     output wire                     v_sync_out
@@ -207,7 +223,7 @@ wire signed [47:0] row1_p;
 wire signed [47:0] row2_p;
 wire signed [47:0] row3_p;
 wire signed [47:0] row4_p;
-wire signed [47:0] fir_out_o;
+wire signed [47:0] row_sum_total;
 wire signed [17:0] coeff_00_ext;
 wire signed [17:0] coeff_01_ext;
 wire signed [17:0] coeff_02_ext;
@@ -233,9 +249,11 @@ wire signed [17:0] coeff_41_ext;
 wire signed [17:0] coeff_42_ext;
 wire signed [17:0] coeff_43_ext;
 wire signed [17:0] coeff_44_ext;
-wire signed [47:0] fir_out_scaled;
-reg  [7:0]         fir_out_sat_reg;
 
+
+/*
+ * Coeffs are 16 bit bit dsp B reg is 18, extend for deterministic behaviour
+ */
 assign coeff_00_ext = {{2{coeff_00_i[15]}}, coeff_00_i};
 assign coeff_01_ext = {{2{coeff_01_i[15]}}, coeff_01_i};
 assign coeff_02_ext = {{2{coeff_02_i[15]}}, coeff_02_i};
@@ -262,6 +280,10 @@ assign coeff_42_ext = {{2{coeff_42_i[15]}}, coeff_42_i};
 assign coeff_43_ext = {{2{coeff_43_i[15]}}, coeff_43_i};
 assign coeff_44_ext = {{2{coeff_44_i[15]}}, coeff_44_i};
 
+
+/*
+ * Delay line for valid and sync
+ */
 generate
 if (CTRL_DELAY > 0) begin : gen_ctrl_delay
     reg valid_delay [0:CTRL_DELAY-1];
@@ -347,19 +369,19 @@ fir_row_5_cells row_4 (
     .p_o(row4_p)
 );
 
-assign fir_out_o = row0_p + row1_p + row2_p + row3_p + row4_p;
-assign fir_out_scaled = fir_out_o >>> 8;
+// First the five horizontal FIR rows are evaluated independently,
+// then their partial sums are accumulated into the final 5x5 result.
+assign row_sum_total = row0_p + row1_p + row2_p + row3_p + row4_p;
 
-always @(*) begin
-    if (fir_out_scaled[47]) begin
-        fir_out_sat_reg = 8'd0;
-    end else if (|fir_out_scaled[46:8]) begin
-        fir_out_sat_reg = 8'd255;
+// Drop the fractional Q8.8 part before clamping the result to 8-bit range.
+always @(posedge clk) begin
+    if (row_sum_total[47]) begin
+        fir_out_sat <= 8'd0;
+    end else if (|row_sum_total[46:16]) begin
+        fir_out_sat <= 8'd255;
     end else begin
-        fir_out_sat_reg = fir_out_scaled[7:0];
+        fir_out_sat <= row_sum_total[15:8];
     end
 end
-
-assign fir_out_sat = fir_out_sat_reg;
 
 endmodule

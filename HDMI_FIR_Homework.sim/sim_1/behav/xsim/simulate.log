@@ -1,52 +1,57 @@
 Time resolution is 1 ps
-PIXDBG: n=0 row=0 col=17 rgb=(221,131,113) y=148 taps={0,0,0,0,157} sat=3
-PIXDBG: n=1 row=0 col=18 rgb=(222,138,121) y=156 taps={0,0,0,0,154} sat=6
-PIXDBG: n=2 row=0 col=19 rgb=(222,139,114) y=152 taps={0,0,0,0,153} sat=9
-PIXDBG: n=3 row=0 col=20 rgb=(223,127,109) y=146 taps={0,0,0,0,151} sat=9
-PIXDBG: n=4 row=0 col=21 rgb=(223,132,105) y=151 taps={0,0,0,0,148} sat=9
-PIXDBG: n=5 row=0 col=22 rgb=(224,129,102) y=148 taps={0,0,0,0,156} sat=9
-PIXDBG: n=6 row=0 col=23 rgb=(221,134,109) y=154 taps={0,0,0,0,152} sat=9
-PIXDBG: n=7 row=0 col=24 rgb=(218,131,110) y=155 taps={0,0,0,0,146} sat=9
-PIXDBG: n=8 row=0 col=25 rgb=(221,133,113) y=145 taps={0,0,0,0,151} sat=9
-PIXDBG: n=9 row=0 col=26 rgb=(223,130,108) y=149 taps={0,0,0,0,148} sat=9
-PIXDBG: n=10 row=0 col=27 rgb=(225,125,98) y=147 taps={0,0,0,0,154} sat=9
-PIXDBG: n=11 row=0 col=28 rgb=(221,130,121) y=150 taps={0,0,0,0,155} sat=9
-PIXDBG: n=12 row=0 col=29 rgb=(221,129,111) y=148 taps={0,0,0,0,145} sat=9
-PIXDBG: n=13 row=0 col=30 rgb=(220,127,121) y=150 taps={0,0,0,0,149} sat=9
-PIXDBG: n=14 row=0 col=31 rgb=(223,131,109) y=147 taps={0,0,0,0,147} sat=9
-PIXDBG: n=15 row=0 col=32 rgb=(225,127,103) y=145 taps={0,0,0,0,150} sat=9
-PIXDBG: n=16 row=0 col=33 rgb=(223,134,109) y=148 taps={0,0,0,0,148} sat=9
-PIXDBG: n=17 row=0 col=34 rgb=(226,128,106) y=148 taps={0,0,0,0,150} sat=9
-PIXDBG: n=18 row=0 col=35 rgb=(223,135,122) y=145 taps={0,0,0,0,147} sat=9
-PIXDBG: n=19 row=0 col=36 rgb=(225,133,112) y=148 taps={0,0,0,0,145} sat=9
-PIXDBG: n=20 row=0 col=37 rgb=(227,144,124) y=146 taps={0,0,0,0,148} sat=9
-PIXDBG: n=21 row=0 col=38 rgb=(229,135,104) y=151 taps={0,0,0,0,148} sat=9
-PIXDBG: n=22 row=0 col=39 rgb=(231,142,123) y=147 taps={0,0,0,0,145} sat=9
-PIXDBG: n=23 row=0 col=40 rgb=(231,143,116) y=152 taps={0,0,0,0,148} sat=9
-PIXDBG: n=24 row=0 col=41 rgb=(232,142,112) y=151 taps={0,0,0,0,146} sat=9
-PIXDBG: n=25 row=0 col=42 rgb=(230,143,117) y=159 taps={0,0,0,0,151} sat=9
-PIXDBG: n=26 row=0 col=43 rgb=(233,150,121) y=153 taps={0,0,0,0,147} sat=9
-PIXDBG: n=27 row=0 col=44 rgb=(234,148,121) y=158 taps={0,0,0,0,152} sat=9
-PIXDBG: n=28 row=0 col=45 rgb=(237,154,123) y=159 taps={0,0,0,0,151} sat=9
-PIXDBG: n=29 row=0 col=46 rgb=(233,153,121) y=159 taps={0,0,0,0,159} sat=9
-PIXDBG: n=30 row=0 col=47 rgb=(231,149,121) y=159 taps={0,0,0,0,153} sat=9
-PIXDBG: n=31 row=0 col=48 rgb=(237,149,119) y=165 taps={0,0,0,0,158} sat=9
-PROGRESS: wrote 16384 pixels
-PROGRESS: wrote 32768 pixels
-PROGRESS: wrote 49152 pixels
-PROGRESS: wrote 65536 pixels
-PROGRESS: wrote 81920 pixels
-PROGRESS: wrote 98304 pixels
-PROGRESS: wrote 114688 pixels
-PROGRESS: wrote 131072 pixels
-PROGRESS: wrote 147456 pixels
-PROGRESS: wrote 163840 pixels
-PROGRESS: wrote 180224 pixels
-PROGRESS: wrote 196608 pixels
-PROGRESS: wrote 212992 pixels
-PROGRESS: wrote 229376 pixels
-PROGRESS: wrote 245760 pixels
-PROGRESS: wrote 262144 pixels
-DONE: wrote 262144 pixels to fir_img_out.raw
-$stop called at time : 2887850 ns : File "C:/Users/Balazs/Desktop/MSC1/FPGA/homework/HDMI_FIR_Homework.srcs/sim_1/new/tb_fir_picture.v" Line 194
-INFO: xsimkernel Simulation Memory Usage: 29048 KB (Peak: 29048 KB), Simulation CPU Usage: 12171 ms
+[85000] LB/FIR: lb_valid=1 fir_valid=x hs=1 hs_fir=x pixels={0,0,0,0,1} sat=x
+[95000] LB/FIR: lb_valid=1 fir_valid=x hs=0 hs_fir=x pixels={0,0,0,0,2} sat=x
+[105000] LB/FIR: lb_valid=1 fir_valid=x hs=0 hs_fir=x pixels={0,0,0,0,3} sat=x
+[115000] LB/FIR: lb_valid=1 fir_valid=x hs=0 hs_fir=x pixels={0,0,0,0,4} sat=x
+[125000] LB/FIR: lb_valid=1 fir_valid=x hs=0 hs_fir=x pixels={0,0,0,0,5} sat=x
+[135000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={0,0,0,0,6} sat=0
+[145000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={0,0,0,0,7} sat=0
+[155000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={0,0,0,0,8} sat=0
+[215000] LB/FIR: lb_valid=1 fir_valid=1 hs=1 hs_fir=0 pixels={0,0,0,1,17} sat=2
+[225000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,0,2,18} sat=3
+[235000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,0,3,19} sat=4
+[245000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,0,4,20} sat=5
+[255000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,0,5,21} sat=6
+[265000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,0,6,22} sat=7
+[275000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,0,7,23} sat=8
+[285000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={0,0,0,8,24} sat=0
+[345000] LB/FIR: lb_valid=1 fir_valid=1 hs=1 hs_fir=0 pixels={0,0,1,17,33} sat=20
+[355000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,2,18,34} sat=22
+[365000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,3,19,35} sat=24
+[375000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,4,20,36} sat=26
+[385000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,5,21,37} sat=28
+[395000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,6,22,38} sat=30
+[405000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,0,7,23,39} sat=32
+[415000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={0,0,8,24,40} sat=0
+[475000] LB/FIR: lb_valid=1 fir_valid=1 hs=1 hs_fir=0 pixels={0,1,17,33,49} sat=54
+[485000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,2,18,34,50} sat=57
+[495000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,3,19,35,51} sat=60
+[505000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,4,20,36,52} sat=63
+[515000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,5,21,37,53} sat=66
+[525000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,6,22,38,54} sat=69
+[535000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={0,7,23,39,55} sat=72
+[545000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={0,8,24,40,56} sat=0
+[605000] LB/FIR: lb_valid=1 fir_valid=1 hs=1 hs_fir=0 pixels={1,17,33,49,65} sat=104
+[615000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={2,18,34,50,66} sat=108
+[625000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={3,19,35,51,67} sat=112
+[635000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={4,20,36,52,68} sat=116
+[645000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={5,21,37,53,69} sat=120
+[655000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={6,22,38,54,70} sat=124
+[665000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={7,23,39,55,71} sat=128
+[675000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={8,24,40,56,72} sat=0
+[735000] LB/FIR: lb_valid=1 fir_valid=1 hs=1 hs_fir=0 pixels={17,33,49,65,81} sat=170
+[745000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={18,34,50,66,82} sat=175
+[755000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={19,35,51,67,83} sat=180
+[765000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={20,36,52,68,84} sat=185
+[775000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={21,37,53,69,85} sat=190
+[785000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={22,38,54,70,86} sat=195
+[795000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={23,39,55,71,87} sat=200
+[805000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={24,40,56,72,88} sat=0
+[865000] LB/FIR: lb_valid=1 fir_valid=1 hs=1 hs_fir=0 pixels={33,49,65,81,97} sat=250
+[875000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={34,50,66,82,98} sat=255
+[885000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={35,51,67,83,99} sat=255
+[895000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={36,52,68,84,100} sat=255
+[905000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={37,53,69,85,101} sat=255
+[915000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={38,54,70,86,102} sat=255
+[925000] LB/FIR: lb_valid=1 fir_valid=1 hs=0 hs_fir=0 pixels={39,55,71,87,103} sat=255
+[935000] LB/FIR: lb_valid=1 fir_valid=0 hs=0 hs_fir=0 pixels={40,56,72,88,104} sat=0
